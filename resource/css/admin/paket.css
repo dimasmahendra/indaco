@@ -1,0 +1,63 @@
+#frmpaket{
+  width: 100%;  
+}
+.leftright{
+ position: relative;
+ float: left;
+ width: 46.8%;   
+ padding: 5px;
+ border: 2px #999999 solid;
+ margin-right: 10px;
+ -moz-border-radius: 10x;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.contenpaket{
+ position: relative;
+ float: left;
+ width: 99%;     
+}
+
+#inforencanastudi{
+ position: relative;
+ float: left;
+ width: 99%;          
+ border: 2px #999999 solid;
+ -moz-border-radius: 10x;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.rowinfo{
+ position: relative;
+ float: left;
+ width: 100%;             
+ padding: 10px;
+}
+
+.rowinfo2{
+ position: relative;
+ float: left;
+ width: 45%;             
+ padding: 10px;
+}
+
+.detailinfo{
+ position: relative;
+ float: left;
+ width: 10%;                
+ padding: 5px;
+}
+.detailinfo2{
+ position: relative;
+ float: left;
+ width: 50%;                
+}
+
+.dftmtkprasyarat{
+ cursor: pointer;
+ 
+}

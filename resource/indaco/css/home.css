@@ -1,0 +1,29 @@
+.produk-img6a {
+	width: 95%;
+	height: auto;
+	margin-top: 4em;
+	margin-left: -12em;
+}
+@media (max-width: 768px) {
+	.produk-img6a {
+		width: 50%;
+		margin-top: -15em;
+		margin-left: 0;
+		right: 1em;
+	}
+	section#belazo,
+	section#envi,
+	section#topseal,
+	section#hotseal,
+	section#tinting,
+	section#modacon,
+	section#nusatex {
+		background-position: left center;
+	}
+	h2 {
+	font-size: 1.25em;
+	}
+	.splashvid-overlay img {
+		width: 260px;
+	}
+}

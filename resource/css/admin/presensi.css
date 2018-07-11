@@ -1,0 +1,117 @@
+/* 
+    Document   : jadwal
+    Created on : 05 Agu 12, 12:34:58
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#kelasasal{
+    position: relative;
+    float: left;
+    width: 49%;
+}
+#judulguru{
+    background: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+
+#kelasasal1 {
+    position: relative;
+    float: left;
+    width: 40%;
+    padding: 2%;
+    border: #666666 1px solid;
+}
+
+#kelasasal1 li{
+    margin-left: 20px;
+}
+#kelassemester{
+    position: relative;
+    float: left;
+    width: 49%;
+    margin-left: 10px;
+}
+
+.ui-widget {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.ui-accordion  .ui-accordion-content {
+    padding: 0px;
+}
+.ui-helper-reset{
+    line-height: 1;
+}
+.ui-tabs .ui-tabs-panel{
+    padding: 5px;
+}
+ul{
+    padding: 0px;
+}
+.placeholder1{
+    height: 40px;
+}
+.trushpeng{
+    text-align: center;
+    position: relative;
+    width:15px;
+    left: 90%;
+    top: -15px;
+    font-size: 12px;
+    height: 15px;
+    /*    padding:5px;*/
+    background-color: #eeeeee;
+    cursor: pointer;
+    z-index: 50;
+    -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 10px;
+    border: #333333 2px solid;
+
+}
+
+.nilaipeng{
+    
+   position: relative;
+    float: right;
+    text-align: center;
+/*    width:15px;*/
+    left: -10%;
+    top: -15px;
+    font-size: 12px;
+/*    height: 15px;*/
+    /*    padding:5px;*/
+/*    background-color: #eeeeee;*/
+/*    cursor: pointer;*/
+
+    z-index: 50;
+/*    -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 10px;
+    border: #333333 2px solid;*/
+
+}
+.capnilaipeg{
+  position: relative;
+    float: left;
+   width: 70%;
+}
+.linilaipeg{
+    position: relative;
+    float: left;
+    width: 100%;
+    
+}

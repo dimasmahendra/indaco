@@ -1,0 +1,538 @@
+/* 
+    Document   : jadwal
+    Created on : 05 Agu 12, 12:34:58
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+.verticaltext{
+    position: fixed;
+    height: 200px;
+    width: 30px;
+    z-index: 5;
+    left:   0%;
+    background-color: #eeeeee;
+
+    z-index: 10;
+    -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 10px;
+    border: #333333 2px solid;
+    top: 20%;
+    cursor: pointer;
+}
+
+.anakpanahkiri{
+    position: relative;
+    float: left;
+    font-weight: bolder;
+}
+
+.vertikal90 {
+    position: relative;
+    float: left;
+    top: 20px;
+    left: 10px;
+    font-weight: bold;
+    -moz-transform:rotate(-270deg);
+    -moz-transform-origin: bottom left;
+    -webkit-transform: rotate(-270deg);
+    -webkit-transform-origin: bottom left;
+    -o-transform: rotate(-270deg);
+    -o-transform-origin:  bottom left;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+
+#tableguru{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    font-size: 65%;
+}
+
+.clshari {
+    text-align: center;
+    position: relative;
+    float: left;
+    padding-top:  5px;
+    height: 70px;
+    width: 12.6%;
+    font-size: 100%;
+    border-left: 1px solid #333333;
+    /*    border-left: 1px solid #333333;*/
+
+
+}
+
+.mapelGuru1 {
+    text-align: center;
+    position: relative;
+    float: left;
+    padding-top:  5px;
+    border-left: 1px solid #333333;
+    /*    border-left: 1px solid #333333;*/
+
+
+}
+
+.clsjam{
+    position: relative;
+    float: left;
+    width: 8%;
+    padding: 5px;
+    cursor: pointer;
+
+}
+.rowjam{
+    position: relative;
+    float: left;
+    width: 100%;
+    border-left: 1px solid #333333;
+    border-right:  1px solid #333333;
+    border-bottom:   1px solid #333333;
+}
+
+#elemenmapel{
+
+    /*    position: fixed;*/
+    width:100%;
+    height: 300px;
+    background-color: #eeeeee;
+    overflow: scroll;
+    z-index: 10;
+    /*    -moz-border-radius: 15x;
+        -webkit-border-radius: 15px;
+        -khtml-border-radius: 15px;
+        border-radius: 10px;
+        border: #333333 2px solid;*/
+
+}
+#elemenmapel1{
+
+    /*    position: fixed;*/
+    width:90%;
+    height: 300px;
+    background-color: #eeeeee;
+    overflow: scroll;
+    z-index: 10;
+    /*    -moz-border-radius: 15x;
+        -webkit-border-radius: 15px;
+        -khtml-border-radius: 15px;
+        border-radius: 10px;
+        border: #333333 2px solid;*/
+
+}
+
+#elemenmapel1 li{
+list-style: decimal;
+
+}
+.limapeldrop li{
+  height: 20px;
+}
+
+.limapeldrop1{
+  height: 20px;
+}
+
+#elemenmapel li{
+    
+    cursor: move;
+    top: -10px;
+}
+
+#elemenkelas{
+    /* top:80px;
+     left: 90%;
+
+     clear: both;*/
+
+    /*    position: fixed;*/
+    width:100%;
+    height: 300px;
+    overflow: scroll;
+    left: 0%;
+    /*    padding:5px;*/
+    background-color: #eeeeee;
+
+    z-index: 10;
+    /*    -moz-border-radius: 15x;
+        -webkit-border-radius: 15px;
+        -khtml-border-radius: 15px;
+        border-radius: 10px;
+        border: #333333 2px solid;*/
+}
+
+#elemenkelas li{
+    cursor: move;
+}
+
+#elemenkelompok{
+
+    width:100%;
+    height: 300px;
+    overflow: scroll;
+    left: 0%;
+    background-color: #eeeeee;
+    z-index: 10;
+
+}
+
+#elemenkelompok li{
+    cursor: move;
+}
+
+#dragkelasmapel{
+    position: fixed;
+    width:300px;
+    left: 60%;
+    background-color: #eeeeee;
+    top: 30%;
+    z-index: 1000;
+    -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 10px;
+    border: #333333 2px solid;
+
+}
+
+#dragpanel{
+    position: fixed;
+    width:600px;
+    left: 40%;
+    background-color: #eeeeee;
+    top: 30%;
+    z-index: 1000;
+    -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 10px;
+    border: #333333 2px solid;
+
+}
+#headerdrag{
+    text-align: center;
+    background-color: #333333;
+    color: white;
+    cursor: move;
+}
+
+#dragdaftarsiswa{
+    position: fixed;
+    width:600px;
+    left: 60%;
+    background-color: #eeeeee;
+    top: 30%;
+    z-index: 1000;
+    -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 10px;
+    border: #333333 2px solid;
+
+}
+
+
+#gambarcart{
+    height: 90px;
+    width: 140px;
+}
+
+#detailcart{
+    width:200px;
+}
+
+#detailmapel
+{
+    -width:200px;
+}
+
+.fixed {
+    position: fixed;
+    top: 10%;
+    background-color: #eeeeee ! important;
+}
+
+
+.kelasdrop ol  li:first-child {
+    list-style-type: none;
+}
+.mapeldrop ol  li:first-child {
+    list-style-type: none;
+}
+
+.kelompokdrop ol  li:first-child {
+    list-style-type: none;
+}
+.trush{
+    text-align: center;
+    position: relative;
+    width:15px;
+    left: 86.8%;
+    top: -6px;
+    font-size: 12px;
+    height: 15px;
+    /*    padding:5px;*/
+    background-color: #eeeeee;
+    cursor: pointer;
+    z-index: 50;
+    -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 10px;
+    border: #333333 2px solid;
+
+}
+
+.mapeldrop{
+    cursor: move;
+    z-index: 1020;
+    height: 30px;
+    margin-top: -10px;
+}
+
+.mapeldropnilai{
+    cursor: pointer;
+   
+    
+}
+
+.mapeldropjadwal{
+cursor: default;    
+font-size: 12px;
+   
+    
+}
+.ui-front{
+ z-index: 200;   
+}
+.mapeldrop ol{
+    padding: 0px;
+}
+
+.kelasdrop{
+    cursor: move;
+    z-index: 1031;
+    height: 30px;
+    margin-top: -20px;
+}
+
+.kelasdrop ol{
+    padding: 0px;
+}
+.kelompokdrop{
+    cursor: move;
+    z-index: 1031;
+    height: 30px;
+    margin-top: -20px;
+}
+
+.kelompokdrop ol{
+    padding: 0px;
+}
+
+.placeholder1{
+    cursor: move;
+    z-index: 1020;
+    height: 40px;
+    margin-top: 0px;
+}
+
+.placeholder2{
+    cursor: move;
+    z-index: 1031;
+    height: 40px;
+/*    padding-top: 10px;*/
+    font-weight: bold;
+    margin-top: 20px;
+}
+    
+.placeholder3{
+    cursor: move;
+    z-index: 1031;
+    height: 30px;
+    margin-top: -15px;
+}
+
+.pilihujian{
+  cursor: pointer;
+}
+
+#mapelguru{
+    margin-left: 30px;
+    position: relative;
+    float: left;
+    width: 150px;
+    text-align: left;
+    font-size: 100%;
+}
+
+#mapelkkm{
+    position: relative;
+    float: left;
+    width: 100px;
+}
+#pembayaran{
+ cursor: pointer;
+}
+
+.celljadwalujian{
+ cursor: pointer;
+}
+
+#modalpanelbobot{
+/*  overflow: scroll;*/
+}
+
+/* ----------- stylejadwal ----------- */
+#stylejadwal{
+/*border:solid 2px #b7ddf2;
+background:#ebf4fb;*/
+/*margin: 0 auto; */
+font-size: 12px;;
+font-family: sans-serif;
+margin: auto;
+}
+
+#stylejadwal .nospacer{
+float :left;
+display: block;
+height:30px;
+background-color: gray;
+}
+
+.formjadwal{
+/*margin:0 auto; */
+/* IE position: fixed; */
+
+  position: relative;
+  width:100%;
+  padding:0px;
+  z-index: 4;
+
+}
+
+
+#stylejadwal h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+#stylejadwal .garis{
+ margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+}
+
+#stylejadwal p{
+float: left;
+font-size:12px;
+color:#666666;
+margin-bottom:0px;
+margin-top: 0px;
+/*margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+*/
+}
+#stylejadwal label{
+float: left;
+display:block;
+font-weight:bold;
+text-align:right;
+width:140px;
+
+}
+#stylejadwal .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+
+#stylejadwal input,select,textarea,options{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #aacfe4;
+/*width:200px;*/
+margin:2px 0 5px 5px;
+-moz-border-radius: 5x;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#chkmenu{
+ position: relative;
+ left: 200px;
+}
+
+#chkmenu input{
+ /*padding:0px;
+ margin: 0px;*/
+
+ color: blue;
+ float: none;
+}
+
+#stylejadwal .chk{
+ padding:0px;
+ margin: 0px;
+ color: green;
+}
+
+#stylejadwal button{
+clear:both;
+margin-left:10px;
+width:200px;
+height:31px;
+background:#666666 ;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:11px;
+font-weight:bold;
+cursor: pointer;
+    -moz-border-radius: 5x;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#stylejadwal submit{
+clear:both;
+margin-left:150px;
+width:125px;
+height:31px;
+background:#666666 ;
+text-align:center;
+line-height:31px;
+color:#FFFFFF;
+font-size:12px;
+font-weight:bold;
+}
+
+.rowcontrol{
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.captionupload{
+  position: relative;
+    float: left;
+    width: 30%;
+}

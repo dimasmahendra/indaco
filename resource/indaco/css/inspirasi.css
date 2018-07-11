@@ -1,0 +1,119 @@
+html, body {
+	overflow-x: hidden;
+}
+.fixed-top {
+	z-index: 99999;
+}
+.inspirasi-leftpanel {
+margin-top: 100px;
+}
+.inspirasi-icon-carousel {
+	padding-bottom: 100%;
+}
+.carousel-control-prev,
+.carousel-control-next {
+	width: 45px;
+	height: 45px;
+top: 45%;
+z-index: 99991;
+}
+.carousel-control-prev {
+	left: 8px;
+}
+.carousel-control-next {
+right: 12px;
+}
+.carousel-fade .carousel-item {
+	transition-duration: .6s;
+}
+/*
+.3d-carousel ul li {
+	transition: width .5s, height .5s, top .5s, left .5s;
+	-webkit-transition: width .5s, height .5s, top .5s, left .5s;
+}
+*/
+.left,
+.right {
+	cursor: pointer;
+}
+.left.fa-angle-left,
+.right.fa-angle-right {
+width: 45px;
+	height: 45px;
+	font-size: 38px !important;
+}
+.left.fa-angle-left {
+	padding: 3px 3px 0 0;
+}
+.right.fa-angle-right {
+	padding: 3px 0 0 3px;
+}
+
+img.modern {
+margin-left: 0px !important;
+}
+img.fresh {
+margin-left: 5px !important;
+}
+
+
+.inspirasi-icon-overlay-top-left {
+padding: 20px 0 0 20px;
+}
+.inspirasi-icon-overlay-top-right {
+padding: 20px 25px 0 0;
+}
+.inspirasi-icon-overlay-bottom-left {
+padding: 0px 0 0 20px;
+}
+.inspirasi-icon-overlay-bottom-right {
+padding: 0px 25px 0 0;
+}
+
+.inspirasi-icon-overlay-top-left.modern {
+padding: 35px 0 0 55px;
+}
+.inspirasi-icon-overlay-top-right.modern {
+padding: 35px 55px 0 0;
+}
+.inspirasi-icon-overlay-bottom-left.modern {
+padding: 55px 0 0 55px;
+}
+.inspirasi-icon-overlay-bottom-right.modern {
+padding: 55px 55px 0 0;
+}
+
+@media (max-width: 768px) {
+	.carousel-control-prev,
+	.carousel-control-next {
+    width: 25px;
+    height: 25px;
+    top: 45%;
+	}
+	.carousel-control-prev {
+	left: -1px;
+	}
+	.carousel-control-next {
+	right: 13px;
+	}
+	.left.fa-angle-left,
+	.right.fa-angle-right {
+	width: 25px;
+		height: 25px;
+		font-size: 24px !important;
+	}
+	.left.fa-angle-left {
+	padding: 0px 3px 0 0;
+	}
+	.right.fa-angle-right {
+	padding: 0px 0 0 2px;
+	}
+	.judul {
+    margin: 78px 0px 0 20px;
+    display: block;
+    position: absolute;
+    z-index: 99991;
+    color: #fff;
+		text-shadow: 0px 0px 2px #000;
+	}
+}

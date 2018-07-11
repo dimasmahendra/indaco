@@ -1,0 +1,75 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 19, 2014, 4:51:10 PM
+    Author     : jhonpc
+*/
+
+#suplierarea{
+    position: relative;
+    float: left;
+    width: 100%;
+
+}
+
+.infoorder{
+    position: relative;
+    float: left;
+    width: 30%;   
+    border: #777777 2px solid;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px; 
+    margin-left: 20px;
+    height: 200px;
+
+
+}
+
+.titleinfoorder{
+    position: relative;
+    float: left;
+    width: 100%;   
+    background-color: #777777;
+    color: white;        
+    text-align: center;
+    cursor: move;
+}
+.contentinfoorder{
+    height: 80%;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.rowid{
+    position: relative;
+    float: left;   
+    width: 100%;   
+}
+
+.multiselect {
+    width:150px;
+    height:100px;
+
+    border:solid 1px #c0c0c0;
+    overflow:auto;
+}
+#NoSuratJalanArea{  
+    position: relative;   
+    left: 150px;   
+    width: 200px;
+}
+.multiselect label {
+    display:block;
+    text-align: left;
+    font-size: 10px;
+}
+
+.multiselect-on {
+    color:#ffffff;
+    background-color:#000099;
+}

@@ -1,0 +1,647 @@
+/*body{
+font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+*/
+/*p, h1, form, button{border:0; margin:0; padding:0;}
+
+.spacer{clear:both; height:1px;}
+
+ ----------- My Form ----------- */
+p, h1, form, button{border:0; margin:0; padding:0; font-size: 12px;}
+
+.spacer{clear:both; height:1px;}
+/*
+body{
+font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+}
+*/
+
+
+#myLogin{
+    border:solid 2px #b7ddf2;
+    background:#ebf4fb;
+    /*margin: 0 auto; */
+    margin: auto;
+    -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+    width: 400px;
+    height: 200px;
+    top :-10px;
+}
+
+#myform{
+    /*margin:0 auto; */
+    /* IE position: fixed; */
+    position: relative;
+    width:99.5%;
+    margin: auto;
+
+
+}
+#myLogin input,select,textarea,options{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    /*width:200px;*/
+    margin:2px 0 5px 5px;
+    -moz-border-radius: 5x;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+ #myLogin label{
+    float: left;
+    display:block;
+    font-weight:bold;
+    text-align:right;
+    width:140px;
+
+}
+#myLogin button{
+    clear:both;
+
+/*    margin-left:25%;*/
+    width:200px;
+    height:31px;
+    background:#666666 url(img/button.png) no-repeat;
+    text-align:center;
+    line-height:31px;
+    color:#FFFFFF;
+    font-size:11px;
+    font-weight:bold;
+    cursor: pointer;
+    -moz-border-radius: 5x;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+    margin-top:10%;
+/*    margin-left: 25%;*/
+    
+}
+
+#myLogin h3{
+    padding-top:   10px;
+    padding-left:    10px;
+/*    text-align: center;*/
+    font-size:16px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom:  0px;
+
+}
+#myLogin h1 {
+    width: 100%;
+    text-align: center;
+    font-size:14px;
+    font-weight:bold;
+    margin-top:8px;
+    margin-bottom:  30px;
+}
+/* ----------- stylized ----------- */
+#stylized{
+    border:solid 2px #b7ddf2;
+    background:#ebf4fb;
+    /*margin: 0 auto; */
+    margin: auto;
+    -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+    width: 90%;
+}
+
+#stylized .nospacer{
+    float :left;
+    display: block;
+    height:30px;
+    background-color: gray;
+
+}
+.myform2{
+    /*margin:0 auto; */
+    /* IE position: fixed; */
+
+    position: relative;
+    width:250px;
+    padding:0px;
+    z-index: 4;
+    background-color: gray;
+
+}
+
+
+#stylized h1 {
+    -font-size:14px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+#stylized .garis{
+    margin-bottom:20px;
+    border-bottom:solid 1px #b7ddf2;
+    padding-bottom:10px;
+}
+
+#stylized p{
+    float: left;
+    font-size:12px;
+    color:#666666;
+    margin-bottom:0px;
+    margin-top: 0px;
+    /*margin-bottom:20px;
+    border-bottom:solid 1px #b7ddf2;
+    padding-bottom:10px;
+    */
+}
+#stylized label{
+    float: left;
+    display:block;
+    font-weight:bold;
+    text-align:right;
+    width:140px;
+
+}
+#stylized .small{
+    color:#666666;
+    display:block;
+    font-size:11px;
+    font-weight:normal;
+    text-align:right;
+    width:140px;
+}
+
+#stylized input,select,textarea,options{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    /*width:200px;*/
+    margin:2px 0 5px 5px;
+    -moz-border-radius: 5x;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#chkmenu{
+    position: relative;
+    left: 200px;
+}
+
+#chkmenu input{
+    /*padding:0px;
+    margin: 0px;*/
+
+    color: blue;
+    float: none;
+}
+
+#stylized .chk{
+    padding:0px;
+    margin: 0px;
+    color: green;
+}
+
+#stylized button{
+    clear:both;
+    margin-left:10px;
+    width:200px;
+    height:31px;
+    background:#666666 url(img/button.png) no-repeat;
+    text-align:center;
+    line-height:31px;
+    color:#FFFFFF;
+    font-size:11px;
+    font-weight:bold;
+    cursor: pointer;
+    -moz-border-radius: 5x;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#stylized submit{
+    clear:both;
+    margin-left:150px;
+    width:125px;
+    height:31px;
+    background:#666666 url(img/button.png) no-repeat;
+    text-align:center;
+    line-height:31px;
+    color:#FFFFFF;
+    font-size:11px;
+    font-weight:bold;
+}
+/* start header */
+#logo{
+position: relative;
+    float: left;
+ 
+ left: 10px;
+ width: 80px;
+ height: 80px;
+
+ font-weight: bold;
+}
+#captionlogo{
+  position: relative;
+  float: left;
+  width: 60%;
+  left: 30px;
+  top:10px;
+ font-size: 30px;
+ color: #ff6600;
+
+}
+
+#logintampil{
+  position: relative;
+  float: left;
+  width: 30%;
+padding-top: 10px;
+}
+
+#nmpelogin{
+  position: relative;
+  float: left;
+  width: 100%;
+  font-size: 20px;
+  color: #ff6600;
+}
+
+#nmjabatan{
+  position: relative;
+  float: left;
+  width: 50%;
+  font-size: 12px;
+  color: #ff6600;
+}
+#logoutatas{
+  position: absolute;
+  top: 40px;
+  left: 85%;
+  width: 100px;
+  cursor:pointer;
+  color: #eeeeee;
+  
+}
+
+#logoutatas a{
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor:pointer;
+  color: #eeeeee;
+}
+/* end header */
+#tablereport{
+    position: relative;
+    /*float: left;
+     display: block;*/
+
+    width: 830px;
+    margin: auto;
+    /*background-color: #aacfe4;*/
+}
+
+/*.tabledata{
+    position: relative;
+    font-size:11px;
+}*/
+
+.tableborder{
+    border-right:1px solid #666;border-bottom:1px solid #666;
+}
+.tablecontent{
+    border:1px solid;
+}
+.tablecontent table{
+    border-collapse: separate;
+}
+#stylized h3{
+    padding-top:   10px;
+    padding-left:    10px;
+/*    text-align: center;*/
+    font-size:16px;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom:  0px;
+
+}
+
+.tabledata .border td{
+    border-top:1px solid #666;
+    border-left:1px solid #666;
+}
+
+.tabledata .border tr{
+
+    border: 1px solid #666;
+}
+
+.tabledata .endright td{
+    border-right:1px solid #666;
+}
+.tabledata .endbottom td{
+    border-bottom:1px solid #666;
+}
+.tabledata td{
+    padding:0 5px;
+    font-size:14px;
+}
+.tabledata .head{
+    background:#999;
+    text-align:center;
+    font-weight:bold;
+    font-size : 16px;
+
+}
+.rowreport{
+    float: left;
+    display: block;
+    font-family: Gill,Helvetica;
+}
+
+.rowreportkecil{
+    float: left;
+    display: block;
+    font-family: Gill,Helvetica;
+    padding:5px;
+    font-size: 10px;
+}
+
+.rowsreport{
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 1px;
+
+}
+
+
+.rowshead{
+    padding:5px;
+    float: left;
+    display: block;
+    font-weight: bold;
+    border-top: #0000CC;
+    border-bottom:  #0000CC;
+    border-top-style: solid;
+    border-bottom-style: dotted;
+    margin-bottom: 10px;
+}
+
+.rowsheaddana{
+    padding:5px;
+    float: left;
+    display: block;
+    font-weight: bold;
+    border-top: #000;
+    border-top-style: solid;
+    margin-bottom: 10px;
+}
+
+.rowsheadaktifitas{
+    padding:5px;
+    float: left;
+    display: block;
+    font-weight: bold;
+    border-bottom:  #00c;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+
+    margin-bottom: 10px;
+}
+.rowbottom{
+    padding:5px;
+    float: left;
+    display: block;
+    font-weight: bold;
+    border-top: #0000CC;
+    border-bottom:  #0000CC;
+    border-bottom-style: solid;
+    border-top-style: dotted;
+    margin-bottom: 10px;
+}
+
+.rowbottomx{
+    padding:5px;
+    float: left;
+    display: block;
+    font-weight: bold;
+    border-top: #0000CC;
+    border-top-style: solid;
+
+}
+.judulreport{
+    margin: 20px;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.rowsreportdetail{
+    position: relative;
+    float: left;
+    display: block;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+
+}
+
+.rowreportdetail{
+    padding:5px;
+    float: left;
+    display: block;
+    border-left-style: solid;
+    border-left-width: 1px;
+
+}
+
+.rowreportdetailkiri{
+    padding:5px;
+    float: left;
+    display: block;
+    font-weight: bold;
+
+}
+
+#map{
+    width: 830px;
+    height: 400px;
+    margin:  auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#map2{
+    width: 900px;
+    height: 500px;
+    margin:  auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.viewawal{
+    position: relative;
+    width: 830px;
+    margin: auto;
+    padding: 10px;
+    /*background-color: #aacfe4;*/
+}
+
+.headertabledata{
+                 position: relative;
+                 float: left;
+                 height: 90%;
+                 font-size: 90%;
+                 padding: 5px;
+                 /*border-left:  1px solid #bbbbbb;*/
+/*                 border-right:  1px solid #bbbbbb;*/
+}
+
+.laporanparsleyhead{
+                 position: relative;
+                 float: left;
+                 height: 90%;
+                 font-size: 100%;
+                 padding: 5px;
+                 background: #999999;
+                 font-weight: bold;
+
+                 /*border-left:  1px solid #bbbbbb;*/
+/*                 border-right:  1px solid #bbbbbb;*/
+}
+.laporanparsley{
+                 position: relative;
+                 float: left;
+                 height: 90%;
+                 font-size: 90%;
+                 padding: 5px;
+                 /*border-left:  1px solid #bbbbbb;*/
+/*                 border-right:  1px solid #bbbbbb;*/
+}
+
+.detailtabledata{
+    position: relative;
+    float: left;
+    font-size: 90%;
+    font-size: 12px;
+/*    padding: 5px;*/
+    /*border-left:  1px solid #bbbbbb;*/
+
+
+/*           border-right:  1px solid #bbbbbb;*/
+    /*        border-bottom: 1px solid #333333;*/
+}
+
+.rowsreporttabledata{
+
+    position: relative;
+    float: left;
+    width: 100%;
+    border-bottom:  1px solid #bbbbbb;
+    border-left:  1px solid #bbbbbb;
+    border-right:  1px solid #bbbbbb;
+}
+
+.rowsreportheader{
+    position: relative;
+    float: left;
+    width: 100%;
+    background:#999999;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 35px;
+    border-bottom:  1px solid #bbbbbb;
+    border-left:  1px solid #bbbbbb;
+    border-right:  1px solid #bbbbbb;
+}
+
+.buttonnavtabeldata{
+width:40px;
+cursor: pointer;
+position: relative;
+float:left;
+}
+.tabledata img{
+  cursor: pointer;
+}
+.tabledata{
+    margin-top: 10px;
+    clear:left;
+    font-size:12px;
+    margin-bottom:  10px;
+
+}
+.tableborder{
+    border:1px solid #666;
+}
+.tablecontent{
+    border:1px solid;
+}
+.tablecontent table{
+    border-collapse: separate;
+}
+/*h3{
+    font-size:14px;
+    font-weight:bold;
+}*/
+.tableborder .border td{
+    border-top:1px solid #666;
+    border-left:1px solid #666;
+}
+.tableborder .endright td{
+    border-right:1px solid #666;
+}
+.tableborder .endbottom td{
+    border-bottom:1px solid #666;
+}
+.tableborder td{
+    padding:0 5px;
+
+}
+.tableborder .head{
+    background:#999;
+    text-align:center;
+    font-weight:bold;
+}
+#check{
+    text-align: left;
+    font-size: 12px;
+    
+}
+#check label,p{
+    text-align: left;
+    font-size: 12px;
+    color:#666666;
+    font-weight: bold;
+    margin-left: 5px;
+/*    width:120px;*/
+}
+#scond p{
+   width:429px;
+   text-align: right;
+}
+#place{
+    width:500px;
+}
+
+#tempatfoto{
+ position: absolute;
+ left: 700px;
+ top:40px;
+}
+.radio2{
+ position: relative;
+ float: left;
+ width: 100px;
+}

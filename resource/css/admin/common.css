@@ -1,0 +1,444 @@
+/*
+    Document   : dolphin
+    Created on : 21 Mar 11, 22:55:53
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+html,body{
+    margin:0;
+    /*	background: #CCCCFF;
+    background-color: #666666; */
+
+
+    background-color: #fff;
+    padding: 0 2%;
+
+    /*background:#9ad4ff url(images/background.jpg) repeat-x top;*/
+}
+
+img {
+    border: 0;
+}
+a{ display:block;color: #981793;
+   padding:10px}
+
+#container {
+
+    margin: auto;
+    width: 100%;
+    -position: relative;
+    background-color: #1c2f8e;
+    /*background-image: url(img/bgkiri.png);*/
+    -background: #cccccc;
+
+}
+#container-content{
+    margin: auto;
+    width: 100%;
+    position: relative;
+
+    /*background-image: url(img/bgkiri.png);*/
+/*    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0A5DC0), color-stop(1, #000) );
+	background:-moz-linear-gradient( center top, #0A5DC0 5%, #000 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0A5DC0', endColorstr='#000');
+	background-color:#0A5DC0;*/
+  -moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    -khtml-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+#header{
+    -position: relative;
+
+    width: 100%;
+
+}
+#header-content{
+    float: left;
+    margin-top: 30px;
+/*    background:#CCC;*/
+    width: 100%;
+
+}
+#user-content{
+    height:20px;
+    clear:left;
+    color:white;
+    padding:0 5px;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a74d20), color-stop(1, #000) );
+    background: -moz-linear-gradient( center top, #a74d20 5%, #000 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a74d20', endColorstr='#000');
+    background-color: #a74d20;
+    border-top: 1px solid #000;
+}
+#logo{
+    position: relative;
+    -float: left;
+
+    -left: 10px;
+    width: 100%;
+    height: 90px;
+
+    font-weight: bold;
+}
+#captionlogo{
+    -position: relative;
+    -float: left;
+    width: 100%;
+    -left: 30px;
+    -top:10px;
+    font-size: 40px;
+    color: white;
+    text-align:center;
+}
+#menu{
+    position: relative;
+    float: left;
+    width: 100%;
+    -height: 40px;
+    -margin-top: 5px;
+    -margin-bottom: 10px;
+    color:#FFF !important;
+    background:#382319;
+}
+.menu-welcome{
+    font-family:"Times New Roman";
+    font-size: 20pt;
+    padding: 0 5px;
+}
+.menu-welcome a{
+    display: inline;
+    color:white;
+    text-decoration: none;
+    padding: 0;
+}
+#logo img{
+    border: none;
+}
+
+
+#content{
+    -position: relative;
+    -float: left;
+    width: 100%;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #346bdf), color-stop(1, #346bdf) );
+	background:-moz-linear-gradient( center top, #346bdf 5%, #346bdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#346bdf', endColorstr='#346bdf');
+	background-color:#346bdf;
+  padding: 10px 0;
+  border-top : 2px solid #FFF;
+   border-bottom : 2px solid #FFF;
+}
+#content-content{
+    position: relative;
+    float: left;
+    width: 100%;
+  	background-color:#f6f6eb;
+    padding: 10px 0;
+
+}
+#menukiri{
+    position: relative;
+    float: left;
+    width: 20%;
+    -background-color: #eee;
+}
+.kategori{
+    position: relative;
+    float: left;
+    width: 90%;
+    height: 20px;
+    color: #333333;
+    /*    font-weight: bold;*/
+    padding: 5px;
+    background-color: #bbbbbb;
+    -moz-border-radius: 5x;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.kategori a{
+    padding: 0px;
+    text-decoration: none;
+    color: white;
+}
+
+.childkategori{
+    position: relative;
+    float: left;
+    width: 100%;
+
+    /*    left: -30px;*/
+
+    font-size:10px;
+    font-weight: bold;
+    border-top: 1px dotted #bbbbbb;
+
+}
+
+.childkategori a{
+    padding: 5px;
+    text-decoration: none;
+    color: #333333;
+
+}
+
+.childkategori a:hover{
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #888888;
+}
+
+
+
+
+#namapegawai{
+    text-align: right;
+    position: relative;
+    float: left;
+    width: 30%;
+    margin-left: 50px;
+    top: 40px;
+    color: white;
+}
+#namapeg{
+    position: relative;
+    float: left;
+    width: 90%;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#jabatan{
+    position: relative;
+    float: left;
+    width: 90%;
+    font-size: 12px;
+    font-weight: bold;
+}
+#footer{
+    -position: relative;
+    -float: left;
+    clear: left;
+    margin-top: 2px;
+    width: 100%;
+    -height: 10px;
+
+    background-color: #1c2f8e;
+    color:#fff;
+    padding:15px 0;
+    text-align:center;
+
+}
+#footer2{
+    -position: relative;
+    -float: left;
+    width: 100%;
+    -height: 10px;
+    background-color: #382319;
+    clear: left;
+    color:#FFF;
+    padding:15px 0;
+    text-align:center;
+    -moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    -khtml-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+#tampilbahan{
+    position:relative;
+    float: left;
+    width: 100%;
+}
+
+#tampilprodukbahan{
+    position:relative;
+    float: left;
+    width: 60%;
+
+}
+
+#bahan{
+    position:fixed;
+    float: left;
+    top:20%;
+    left: 61%;
+    width: 35%;
+    height: 50%;
+    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: #333333 1px solid;
+    background-color: #dddddd;
+
+}
+
+#judulbahan{
+    padding-top: 5px;
+    text-align: center;
+    width: 100%;
+    background-color: #888888;
+    height: 20px;
+    font-weight: bold;
+}
+
+#imglogo{
+   /* position:relative;
+    float: left;*/
+    width: 200px;
+    height: 190px;
+    margin: auto;
+}
+
+.keteranganheader{
+    position:relative;
+    padding-left: 10px;
+    float: left;
+    width: 100%;
+    color: #555555;
+    font-size: 14px;
+}
+#areaupload{
+    position: relative;
+    float: left;
+    width:600px;
+}
+
+
+
+#photoarea{
+    position: relative;
+    float: left;
+    top: 10px;
+    left: 0px;
+    width:350px;
+    height: 200px;
+    /*  background: blue;*/
+    border: #cccccc 2px solid;
+    -moz-border-radius: 10x;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+
+}
+.gbrupload{
+    position: relative;
+    float: left;
+
+}
+
+#tempatgambar{
+    /*  position: relative;
+      float: left;*/
+    top: 10px;
+    left: 10px;
+    /*  width:490px;*/
+    height: 200px;
+    /*  background: blue;*/
+    border: #cccccc 2px solid;
+    -moz-border-radius: 10x;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#capca{
+    left: 100px;
+    padding-left: 250px;
+}
+
+#ui-datepicker-div{
+ z-index: 1000 !important ;   
+}
+
+#areakananabsolut{
+ position: absolute;
+ left: 700px;
+ top: 55px;
+ width: 300px;
+}
+
+#titleareakanan{
+ position: relative;
+ float: left;
+ width: 100%;
+ padding: 5px;
+ text-align: center;
+ background-color: #333333;
+ color: white;
+}
+
+#contentareakanan{
+  position: relative;
+  float: left;
+  width: 100%;  
+}
+
+.keteranganpersetujuan{
+ position: relative;
+  float: left;
+  width: 100%;     
+}
+
+.judulketpersetujuan{
+ position: relative;
+ float: left;
+ width: 100%;
+ 
+ text-align: center;
+ background-color: #777777;
+ color: white;   
+}
+
+.kontentketpersetujuan{
+ position: relative;
+ float: left;
+ width: 100%; 
+}
+
+#showarea{
+    position: absolute;
+   left: 600px;
+   top:5px;   
+ width: 600px;    
+ height: 300px;
+ overflow-y: scroll;
+ border: #cccccc 2px solid;
+    -moz-border-radius: 10x;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+   border-radius: 10px;
+   background-color: #cccccc;
+}
+
+#titlebarang{
+ width: 100%;
+ text-align: center;
+ background-color: #333333;
+ color: white;     
+}
+
+#closearea{
+   position: absolute;
+   left: 550px;
+   top:5px;
+   z-index: 10;
+}
+.jqmenuatas ul li ul li a{
+    background:#382319 !important;
+}
+.jqmenuatas ul li a:link, .jqmenuatas ul li a:visited{
+    color:#FFF !important;
+}
+.jqmenuatas ul >li> a:hover{
+    background:#a74d20 !important;
+}

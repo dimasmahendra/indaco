@@ -1,0 +1,125 @@
+
+
+.spacer{clear:both; height:1px;}
+
+.myform{
+    position: relative;
+    width:100%;
+    margin: auto;
+}
+
+
+
+#stylized{
+    margin: auto;
+    width: 100%;
+}
+
+#stylized .nospacer{
+    float :left;
+    display: block;
+    height:30px;
+    background-color: gray;
+
+}
+
+#stylized .garis{
+    margin-bottom:20px;
+    border-bottom:solid 1px #b7ddf2;
+    padding-bottom:10px;
+}
+
+#stylized p{
+    float: left;
+    font-size:12px;
+    
+    margin-bottom:0px;
+    margin-top: 0px;
+
+}
+#stylized label{
+    float: left;
+    display:block;
+    font-weight:bold;
+    text-align:right;
+    width:140px;
+
+}
+#stylized .small{
+    
+    display:block;
+    font-size:11px;
+    font-weight:normal;
+    text-align:right;
+    width:140px;
+}
+
+#stylized input,select,textarea,options{
+    float:left;
+    font-size:12px;
+    padding:4px 2px;
+    border:solid 1px #aacfe4;
+    /*width:200px;*/
+    margin:2px 0 5px 5px;
+    -moz-border-radius: 5x;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#chkmenu{
+    position: relative;
+    left: 200px;
+}
+
+#chkmenu input{
+    /*padding:0px;
+    margin: 0px;*/
+
+    color: blue;
+    float: none;
+}
+
+
+
+#stylized submit{
+    clear:both;
+    margin-left:200px;
+    width:200px;
+    height:31px;
+
+    background:  #FF9C08;
+    text-align:center;
+    line-height:31px;
+    color:#FFFFFF;
+    font-size:11px;
+    font-weight:bold;
+    cursor: pointer;
+    -moz-border-radius: 5x;
+    -webkit-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#stylized submit{
+    clear:both;
+    margin-left:150px;
+    width:125px;
+    height:31px;
+    background:#666666 url(img/button.png) no-repeat;
+    text-align:center;
+    line-height:31px;
+    color:#FFFFFF;
+    font-size:11px;
+    font-weight:bold;
+}
+
+#stylized h1{
+    font-family: pristina; font-size: 20pt; font-weight: bold;  margin: 3px;
+    
+}
+.capca{
+    width: 200px;
+    margin-left:  150px;
+    
+}

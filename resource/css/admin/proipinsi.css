@@ -1,0 +1,208 @@
+/*
+    Document   : proipinsi
+    Created on : Dec 1, 2013, 10:44:14 AM
+    Author     : Administrator
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.sisiatasdetail{
+   position: relative;
+   float: left;
+   width: 100%;
+   font-family: "Arial";
+   font-size: 12px;
+   line-height: 20px;
+
+}
+.sisibawahdetail{
+ position: relative;
+  float: left;
+  width: 100%;
+  font-family: "Arial";
+  font-size: 12px;
+  line-height: 20px;
+
+}
+
+#mappropinsi {
+    position: relative;
+    float: left;
+    width: 100%;
+
+}
+
+#datapropinsi{
+  position: relative;
+    float: left;
+    width: 45%;
+}
+
+#uploadmappropinsi{
+   position: relative;
+   float: left;
+    width: 45%;
+}
+
+#dragimg{
+ position: absolute;
+ left: 1000px;
+ top:200px;
+
+}
+#dragimgkab{
+ position: absolute;
+ left: 450px;
+ top:100px;
+
+
+}
+.formupload{
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+#mapimgkabupaten{
+     position: relative;
+     float: left;
+    width: 45%;
+}
+#formkabupaten{
+   position: relative;
+   float: left;
+    width: 45%;
+}
+
+#sisikiri{
+   position: relative;
+   float: left;
+   width: 45%;
+}
+
+#sisikanan{
+   position: relative;
+   float: left;
+    width: 45%;
+}
+
+#mapperkabupaten{
+    position: relative;
+   float: left;
+    width: 100%;
+}
+
+#legenkabupaten{
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#listkabupaten{
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+#chartkab{
+     position: relative;
+    float: left;
+    width: 100%;
+}
+
+#dataperusahaan{
+  position: relative;
+   float: left;
+   width: 45%;
+}
+
+#dataperselisihan{
+  position: relative;
+  float: left;
+  width: 45%;
+}
+
+
+
+.dataperusahaan{
+ position: relative;
+  float: left;
+  width: 45%;
+
+}
+
+.dataperselisihan{
+ position: relative;
+  float: left;
+  width: 45%;
+
+}
+
+
+
+.detailperusahaan{
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 250px;
+  padding: 10px;
+ border:solid 2px #b7ddf2;
+      -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+}
+.visual{
+      position: relative;
+  float: left;
+  width: 100%;
+ border:solid 2px #b7ddf2;
+      -moz-border-radius: 15x;
+    -webkit-border-radius: 15px;
+    -khtml-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.visualimage{
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 10px;
+}
+
+.detail{
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.juduldetail{
+  position: relative;
+  float: left;
+  width: 100%;
+  padding-top: 20px;
+  font-size: 130%;
+  font-weight:bold;
+}
+
+.imgkasus{
+  position: relative;
+  float: left;
+  width: 250px;
+  height: 250px;
+  margin-left: 10px;
+}
+
+.detailimgkasus{
+ width: 100%;
+ height: 80%;
+ float: left;
+ position: relative;
+}
+
+.keteranganimgkasus{
+ width: 100%;
+ float: left;
+ position: relative;
+ padding: 5px;
+}
