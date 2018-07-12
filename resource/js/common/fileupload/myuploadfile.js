@@ -1,15 +1,14 @@
-    function file_get_ext(filename)
-    {
+function file_get_ext(filename)
+{
     return typeof filename != "undefined" ? filename.substring(filename.lastIndexOf(".")+1, filename.length).toLowerCase() : false;
-    }
+}
 
 
-    function imgopendialog(xidimagedialog){
+function imgopendialog(xidimagedialog){
     $(document).ready(function() {    
-     $('#'+xidimagedialog).dialog("open");
-     });
-   }
-   
+       $('#'+xidimagedialog).dialog("open");
+   });
+}   
  
 (function($) {
 

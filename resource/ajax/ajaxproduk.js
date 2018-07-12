@@ -257,5 +257,5 @@ function preview(xurl) {
 
 $(document).ready(function () {
     $("#loading").css('display', 'none');
-    $("#edimage").myupload();
+    $("#edimage").myuploadfile();
 }); 

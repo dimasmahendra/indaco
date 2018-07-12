@@ -32,6 +32,8 @@ class ctrproduk extends CI_Controller {
             '<script language="javascript" type="text/javascript" src="' . base_url() . 'resource/js/select2-develop/dist/js/select2.min.js"></script>' . "\n" .
             '<script language="javascript" type="text/javascript" src="' . base_url() . 'resource/ajax/ajaxmce2.js"></script>' . "\n" .
             '<script language="javascript" type="text/javascript" src="' . base_url() . 'resource/ajax/ajaxtabs.js"></script>' . "\n" .
+            '<script language="javascript" type="text/javascript" src="' . base_url() . 'resource/js/common/fileupload/jquery.fileupload.js"></script>' . "\n" .
+            '<script language="javascript" type="text/javascript" src="' . base_url() . 'resource/js/common/fileupload/myuploadfile.js"></script>' . "\n" .
             '<script language="javascript" type="text/javascript" src="' . base_url() . 'resource/ajax/ajaxproduk.js"></script>';
         echo $this->modelgetmenu->SetViewAdmin($this->setDetailFormProduk($xidx), '', '', $xAddJs, '', 'Product Type');
     }
