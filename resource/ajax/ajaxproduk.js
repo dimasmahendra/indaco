@@ -13,7 +13,7 @@ function dosearchevent(xAwal) {
     }
     $(document).ready(function () {
         $.ajax({
-            url: getBaseURL() + "index.php/ctrevent/searchevent/",
+            url: getBaseURL() + "ctrproduk/searchevent/",
             data: "xAwal=" + xAwal + "&xSearch=" + xSearch,
             cache: false,
             dataType: 'json',
@@ -34,7 +34,7 @@ function dosearchevent(xAwal) {
 function doeditevent(edidx) {
     $(document).ready(function () {
         $.ajax({
-            url: getBaseURL() + "index.php/ctrevent/editrecevent/",
+            url: getBaseURL() + "ctrproduk/editrecevent/",
             data: "edidx=" + edidx,
             cache: false,
             dataType: 'json',
@@ -71,10 +71,10 @@ function doClearevent() {
     });
 }
 
-function dosimpanthread() {
+function dosimpanproduk() {
     $(document).ready(function () {
         $.ajax({
-            url: getBaseURL() + "index.php/ctrevent/simpanthread/",
+            url: getBaseURL() + "ctrproduk/simpanproduk/",
             data: 
                 "edidx=" + $("#edidx").val() + 
                 "&edtitleindo=" + $("#edtitleindo").val() + 
@@ -93,6 +93,7 @@ function dosimpanthread() {
                 alert("Data Berhasil Disimpan.... ");
             },
             error: function (xmlHttpRequest, textStatus, errorThrown) {
+                console.log("eror simpan produk");
                 alert("Error juga " + xmlHttpRequest.responseText);
             }
         });
@@ -104,7 +105,7 @@ function dohapusevent(edidx) {
     {
         $(document).ready(function () {
             $.ajax({
-                url: getBaseURL() + "index.php/ctrevent/deletetableevent/",
+                url: getBaseURL() + "ctrproduk/deletetableevent/",
                 data: "edidx=" + edidx,
                 cache: false,
                 dataType: 'json',
@@ -145,7 +146,7 @@ function autotag() {
         $("#edkeyword").autocomplete({
             source: function (request, response) {
                 $.ajax({
-                    url: getBaseURL() + "index.php/ctrmetatag/getArraylistmetatag/",
+                    url: getBaseURL() + "ctrmetatag/getArraylistmetatag/",
 //                    term: extractLast( request.term ),
                     data: "edkeyword=" + extractLast($("#edkeyword").val()),
                     dataType: "json",
@@ -199,25 +200,7 @@ function split(val) {
 function extractLast(term) {
     return split(term).pop();
 }
-function loadkategori(){
-    $(document).ready(function () {
-            $.ajax({
-                url: getBaseURL() + "index.php/ctrcategoryevent/getlistkategorieventcombo/",
-                data: "",
-                cache: false,
-                dataType: 'json',
-                type: 'POST',
-                success: function (json) {
-                    $("#showkategori").html(json.data);
-                },
-                error: function (xmlHttpRequest, textStatus, errorThrown) {
-                    alert("Error juga " + xmlHttpRequest.responseText);
-                }
-            });
-        });
-   
-}
-loadkategori();
+
 function strpad(val) {
     return (!isNaN(val) && val.toString().length == 1) ? "0" + val : val;
 }
@@ -271,3 +254,8 @@ function preview(xurl) {
         $("#loading").css('display', 'none');
     });
 }
+
+$(document).ready(function () {
+    $("#loading").css('display', 'none');
+    $("#edimage").myupload();
+}); 

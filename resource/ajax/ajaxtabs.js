@@ -9,10 +9,10 @@ $(document).ready(function(){
         $("#"+tab_id).addClass("current");
     })
 
-    $("#btAddEvent").click(function(){
+    $("#btAddProduk").click(function(){
         $('div.tabs-area').css("display", "block");
-        $('div#tabledataevent').css("display", "none");
-        $('button#btAddEvent').css("display", "none");
+        $('div#tabledataproduk').css("display", "none");
+        $('button#btAddProduk').css("display", "none");
         $("button[name = 'btSimpan']").css("display", "block");
     })
 
