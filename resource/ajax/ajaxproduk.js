@@ -31,25 +31,26 @@ function dosearchevent(xAwal) {
 }
 
 
-function doeditevent(edidx) {
+function doeditproduk(edidx) {
     $(document).ready(function () {
         $.ajax({
-            url: getBaseURL() + "ctrproduk/editrecevent/",
+            url: getBaseURL() + "ctrproduk/editrecproduk/",
             data: "edidx=" + edidx,
             cache: false,
             dataType: 'json',
             type: 'POST',
             success: function (json) {
-                var val = json.artist.split(',');
-                $("#edidx").val(json.idx);
-                $("#edtitleindo").val(json.title_ind);
-                $("#edtitleeng").val(json.title_eng);
-                $("#eddescriptionindo").val(json.description_ind);
-                $("#eddescriptioneng").val(json.description_eng);
-                $("#edidkategori").val(json.kategori);
-                $('#edidartist').select2().val(val).trigger('change');
-                $('.select2').css("width", "");
-                $("#edtanggal").val(json.tanggal);
+                console.log(json);
+                $("#edid").val(json.idx);
+                $("#edname").val(json.nama);
+                $("#edtitleindo").val(json.ind_title);
+                $("#edtitleeng").val(json.eng_title);
+                $("#eddescriptionindo").val(json.ind_description);
+                $("#eddescriptioneng").val(json.eng_description);
+                //$(".previewimageedimage").val(json.image);
+                $("#edimage").val(json.image);
+                $('.previewimageedimage').attr({"src": getBaseURL()+"resource/uploaded/file/"+json.image});
+                $("#edbackground").val(json.bg_image);
             },
             error: function (xmlHttpRequest, textStatus, errorThrown) {
                 alert("Error juga " + xmlHttpRequest.responseText);
@@ -76,14 +77,14 @@ function dosimpanproduk() {
         $.ajax({
             url: getBaseURL() + "ctrproduk/simpanproduk/",
             data: 
-                "edidx=" + $("#edidx").val() + 
+                "edid=" + $("#edid").val() + 
+                "&edname=" + $("#edname").val() + 
                 "&edtitleindo=" + $("#edtitleindo").val() + 
                 "&edtitleeng=" + $("#edtitleeng").val() + 
                 "&eddescriptionindo=" + $("#eddescriptionindo").val() + 
                 "&eddescriptioneng=" + $("#eddescriptioneng").val() + 
-                "&edidkategori=" + $("#edidkategori").val() +
-                "&edidartist=" + $("#edidartist").val() +
-                "&edtanggal=" + $("#edtanggal").val(),
+                "&edimage=" + $("#edimage").val() +
+                "&edbackground=" + $("#edbackground").val(),
             cache: false,
             dataType: 'json',
             type: 'POST',
@@ -258,4 +259,5 @@ function preview(xurl) {
 $(document).ready(function () {
     $("#loading").css('display', 'none');
     $("#edimage").myuploadfile();
+    $("#edbackground").myuploadfile();
 }); 

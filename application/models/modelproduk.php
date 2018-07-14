@@ -24,19 +24,6 @@ class modelproduk extends CI_Model {
         return $name;
     }
 
-    function getartistselected($xidx) { /* spertinya perlu lock table */
-        $xStr = "SELECT b.idx 
-                FROM event_artist a
-                JOIN artist b
-                WHERE a.event_id = '" . $xidx . "' AND a.artist_id = b.idx";
-        $query = $this->db->query($xStr);
-        $row = $query->result_array();
-        foreach ($row as $key => $value) {
-            $idselected[] = $value['idx'];
-        }
-        return $idselected;
-    }
-
     function getListProduk($xAwal, $xLimit, $xSearch = '') {
         if (!empty($xSearch)) {
             $xSearch = "
@@ -48,26 +35,19 @@ class modelproduk extends CI_Model {
         return $query;
     }
 
-    function getDetailevent($xidx) {
-        $xStr = "SELECT * FROM event  WHERE idx = '" . $xidx . "'";
+    function getDetailProduk($xidx) {
+        $xStr = "SELECT * FROM in_product_type  WHERE id = '" . $xidx . "'";
         $query = $this->db->query($xStr);
         $row = $query->row();
         return $row;
     }
 
-    Function setInsertevent($xtitleindo, $xtitleeng, $xdescindo, $xdesceng, $xidkat, $xtanggal) {
-        $xStr = " INSERT INTO event ( title_ind,title_eng,description_ind,description_eng,kategori,tanggal ) 
-                VALUES('" . $xtitleindo . "','" . $xtitleeng . "','" . $xdescindo . "','" . $xdesceng . "','" . $xidkat . "','" . $xtanggal . "')";
+    Function setInsertProduk($xname, $xtitleindo, $xtitleeng, $xdescindo, $xdesceng, $ximage, $xbackground) {
+        $xStr = " INSERT INTO in_product_type ( name,ind_title,eng_title,ind_description,eng_description,image,bg_image ) 
+                VALUES('" . $xname . "','" . $xtitleindo . "','" . $xtitleeng . "','" . $xdescindo . "','" . $xdesceng . "','" . $ximage . "','" . $xbackground . "')";
         $query = $this->db->query($xStr);
         $insert_id = $this->db->insert_id();
         return $insert_id;
-    }
-
-    Function setInsertEventArtist($xStr,$xartis) {
-        $xStr = " INSERT INTO event_artist ( event_id,artist_id ) 
-                VALUES('" . $xStr . "','" . $xartis . "')";
-        $query = $this->db->query($xStr);
-        return $query;
     }
 
     Function setUpdateevent($xidx, $xtitleindo, $xtitleeng, $xdescindo, $xdesceng, $xidkat, $xtanggal) {

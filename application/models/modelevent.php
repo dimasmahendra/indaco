@@ -55,19 +55,12 @@ class modelevent extends CI_Model {
         return $row;
     }
 
-    Function setInsertevent($xtitleindo, $xtitleeng, $xdescindo, $xdesceng, $xidkat, $xtanggal) {
-        $xStr = " INSERT INTO event ( title_ind,title_eng,description_ind,description_eng,kategori,tanggal ) 
-                VALUES('" . $xtitleindo . "','" . $xtitleeng . "','" . $xdescindo . "','" . $xdesceng . "','" . $xidkat . "','" . $xtanggal . "')";
+    Function setInsertProduk($xtitleindo, $xtitleeng, $xdescindo, $xdesceng, $ximage, $xbackground) {
+        $xStr = " INSERT INTO in_product_type ( name,ind_title,eng_title,ind_description,eng_description,image,bg_image ) 
+                VALUES('" . $xtitleindo . "','" . $xtitleeng . "','" . $xdescindo . "','" . $xdesceng . "','" . $ximage . "','" . $xbackground . "')";
         $query = $this->db->query($xStr);
         $insert_id = $this->db->insert_id();
         return $insert_id;
-    }
-
-    Function setInsertEventArtist($xStr,$xartis) {
-        $xStr = " INSERT INTO event_artist ( event_id,artist_id ) 
-                VALUES('" . $xStr . "','" . $xartis . "')";
-        $query = $this->db->query($xStr);
-        return $query;
     }
 
     Function setUpdateevent($xidx, $xtitleindo, $xtitleeng, $xdescindo, $xdesceng, $xidkat, $xtanggal) {

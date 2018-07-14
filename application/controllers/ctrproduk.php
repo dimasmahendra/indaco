@@ -63,7 +63,8 @@ class ctrproduk extends CI_Controller {
         $xBufResult .= setForm('', 'Title Content', form_input(getArrayObj('edtitleeng', '', '500'), '', '')) . '<div class="spacer"></div>';
         $xBufResult .= setForm('', '',  form_textarea(getArrayObj('eddescriptioneng', '', '500'), '', 'class="tinymce" placeholder="description" ')) . '<div class="spacer"></div>';
         $xBufResult .= '</div>';
-        $xBufResult .= setForm('image', '', '<div id="uploadarea">'.form_input(getArrayObj('edimage', '', '200'), '', 'class="uploadimage" alt="upload area" ').'</div>') . '<div class="spacer"></div>';
+        $xBufResult .= setForm('edimage', 'image','<div id="uploadarea">' .form_input(getArrayObj('edimage', '', '200'), '', 'alt="Upload image "'). '</div>')  . '<div class="spacer"></div>';
+        $xBufResult .= setForm('Background', '', '<div id="uploadarea1">'.form_input(getArrayObj('edbackground', '', '200'), '', 'class="uploadimage" alt="upload area" ').'</div>') . '<div class="spacer"></div>';
         $xBufResult .= '<div class="spacer"></div>';
         $xBufResult .= '</div><div class="clearfix"></div>'. form_button('btSimpan', 'Save', 'onclick="dosimpanproduk();" style="display: none;"') . '<div class="spacer"></div>';
         $xBufResult .= '</div>';
@@ -74,19 +75,23 @@ class ctrproduk extends CI_Controller {
         $this->load->helper('json');
         $this->load->helper('common');
         $this->load->model('basemodel');
-        $this->load->model('modelevent');
-        if (!empty($_POST['edidx'])) {
-            $xidx = $_POST['edidx'];
+        $this->load->model('modelproduk');
+        if (!empty($_POST['edid'])) {
+            $xidx = $_POST['edid'];
         } else {
             $xidx = '0';
         }
+        $xname = $_POST['edname'];
         $xtitleindo = $_POST['edtitleindo'];
         $xtitleeng = $_POST['edtitleeng'];
         $xdescindo = $_POST['eddescriptionindo'];
         $xdesceng = $_POST['eddescriptioneng'];
-        $xidkat = $_POST['edidkategori'];
-        $xartis = explode(",", $_POST['edidartist']);
-        $xtanggal = $_POST['edtanggal'];
+
+        $path_parts = pathinfo($_POST['edimage']);
+        $ximage = $path_parts['basename'];
+
+        $path_partss = pathinfo($_POST['edbackground']);
+        $xbackground = $path_partss['basename'];
         
         $xiduser = $this->session->userdata('idpegawai');
         if (!empty($xiduser)) {
@@ -99,12 +104,9 @@ class ctrproduk extends CI_Controller {
                     $insertEventArtis = $this->modelevent->setInsertEventArtist($xidx,$value);
                 }
             } else {
-                $xStr = $this->modelevent->setInsertevent(
-                    $xtitleindo, $xtitleeng, $xdescindo, $xdesceng, $xidkat, datetomysql($xtanggal)
+                $xStr = $this->modelproduk->setInsertProduk(
+                    $xname, $xtitleindo, $xtitleeng, $xdescindo, $xdesceng, $ximage, $xbackground
                 );
-                foreach ($xartis as $key => $value) {
-                    $insertEventArtis = $this->modelevent->setInsertEventArtist($xStr,$value);
-                }
             }
         }
         echo json_encode(null);
@@ -128,7 +130,7 @@ class ctrproduk extends CI_Controller {
         $xbufResult .= '<tbody>';
         foreach ($xQuery->result() as $row) {
             
-            $xButtonEdit = '<img src="' . base_url() . 'resource/imgbtn/edit.png" alt="Edit Data" class="bteditevent" onclick = "doeditevent(\'' . $row->id . '\');" style="border:none;width:20px"/>';
+            $xButtonEdit = '<img src="' . base_url() . 'resource/imgbtn/edit.png" alt="Edit Data" class="bteditevent" onclick = "doeditproduk(\'' . $row->id . '\');" style="border:none;width:20px"/>';
             $xButtonHapus = '<img src="' . base_url() . 'resource/imgbtn/delete_table.png" alt="Hapus Data" onclick = "dohapusevent(\'' . $row->id . '\');" style="border:none;">';
             $xbufResult .= tbaddrow(tbaddcell($row->id) .
                     tbaddcell($row->name) .
@@ -151,20 +153,19 @@ class ctrproduk extends CI_Controller {
         return '<div class="tabledata table-responsive"  style="width:100%;left:-12px;">' . $xbufResult . '</div>' . '<div id="showmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"><div class="modal-dialog modal-lg"><img class="center-block img-responsive" src="" id="imagepreview" alt="preview" /></div></div>';
     }
 
-    function editrecevent() {
+    function editrecproduk() {
         $xIdEdit = $_POST['edidx'];
-        $this->load->model('modelevent');
-        $row = $this->modelevent->getDetailevent($xIdEdit);
-        $artist = implode(",", $this->modelevent->getartistselected($xIdEdit));
+        $this->load->model('modelproduk');
+        $row = $this->modelproduk->getDetailProduk($xIdEdit);
         $this->load->helper('json');
-        $this->json_data['idx'] = $row->idx;
-        $this->json_data['title_ind'] = $row->title_ind;
-        $this->json_data['title_eng'] = $row->title_eng;
-        $this->json_data['description_ind'] = $row->description_ind;
-        $this->json_data['description_eng'] = $row->description_eng;
-        $this->json_data['kategori'] = $row->kategori;
-        $this->json_data['artist'] = $artist;
-        $this->json_data['tanggal'] = $row->tanggal;
+        $this->json_data['idx'] = $row->id;
+        $this->json_data['nama'] = $row->name;
+        $this->json_data['ind_title'] = $row->ind_title;
+        $this->json_data['eng_title'] = $row->eng_title;
+        $this->json_data['ind_description'] = $row->ind_description;
+        $this->json_data['eng_description'] = $row->eng_description;
+        $this->json_data['image'] = (!empty($row->image)) ? base_url() . 'resource/uploaded/file/' . $row->image : base_url() . 'resource/uploaded/file/no-img.jpg' ;
+        $this->json_data['bg_image'] = (!empty($row->bg_image)) ? base_url() . 'resource/uploaded/file/' . $row->bg_image : base_url() . 'resource/uploaded/file/no-img.jpg' ;
         echo json_encode($this->json_data);
     }    
 
