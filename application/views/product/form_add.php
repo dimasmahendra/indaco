@@ -103,7 +103,7 @@
 	<h3>Image</h3>
 	<form action="<?= site_url('product_type/upload_image')?>" id="upload_image" class="dropzone" enctype="multipart/form-data">
       	<?php if(isset($image)):?>
-      		<center>
+      		<center id="preview_image">
       			<small><i>image pada database</i></small>
       			<img class="img-responsive" width="100px" src="<?= base_url('resource/uploaded/product_type_img').'/'.$image ?>">
       		</center>
@@ -115,7 +115,7 @@
 	<h3>Background image</h3>
 	<form action="<?= site_url('product_type/upload_background_image')?>" id="upload_background_image" class="dropzone" enctype="multipart/form-data">
       	<?php if(isset($bg_image)):?>
-      		<center>
+      		<center id="preview_bg_image">
       			<small><i>image pada database</i></small>
       			<img class="img-responsive" width="100px" src="<?= base_url('resource/uploaded/product_type_bg_img').'/'.$bg_image ?>">
       		</center>
@@ -156,6 +156,7 @@
 				this.on("processing", function(file,status) {toastr['info']('harap tunggu sampai upload selesai')});
 				this.on("success", function(file,status) { 
 					if(status == '1'){
+						$('#preview_image').html('');
 						toastr['success']('Sukses');							
 					}else{
 						toastr['warning']('Gagal');
@@ -175,6 +176,7 @@
 				this.on("processing", function(file,status) {toastr['info']('harap tunggu sampai upload selesai')});
 				this.on("success", function(file,status) { 
 					if(status == '1'){
+						$('#preview_bg_image').html('');
 						toastr['success']('Sukses');
 					}else{
 						toastr['warning']('Gagal');
