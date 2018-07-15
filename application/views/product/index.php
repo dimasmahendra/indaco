@@ -3,7 +3,7 @@
 
 <!-- SET CONTENT -->
 
-<button name="btAddProduk" id="btAddProduk" type="button" class="btn btn-info" style="margin-bottom: 20px">Add Product Type</button>
+<button name="btAddProduk" id="btAddProduk" type="button" class="btn btn-info" style="margin-bottom: 20px">Add Product</button>
 
 
 <table  class="dataTable table table-striped table-hover fixed-table-container table-no-bordered" width="100%" cellspacing="0" cellpadding="0">
@@ -20,7 +20,7 @@
 			<?php foreach($data as $key => $value): ?>
 			<tr>
 				<td><?= $value['name'] ?></td>
-				<td><?= $value['ind_title'] ?></td>
+				<td><?= $value['type_title'] ?></td>
 				<td><?= $value['ind_description'] ?></td>
 				<td>
 					<button class="btn btn-sm btn-primary" onclick="form_edit('<?= $value['id'] ?>')">edit</button>
@@ -47,7 +47,7 @@
 	function form_add(){
 		$.ajax(
 			{
-				url : '<?= site_url('product_type/form_add')?>',
+				url : '<?= site_url('product/form_add')?>',
 				type: 'post',
 				data : null,
 				beforeSend : function( xhr ){
@@ -70,7 +70,7 @@
 	function form_edit(update_id){
 		$.ajax(
 			{
-				url : '<?= site_url('product_type/form_edit')?>',
+				url : '<?= site_url('product/form_edit')?>',
 				type: 'post',
 				data : {'id':update_id},
 				beforeSend : function( xhr ){
@@ -99,7 +99,7 @@
 	function delete_data(delete_id){
 		$.ajax(
 			{
-				url : '<?= site_url('product_type/delete')?>',
+				url : '<?= site_url('product/delete')?>',
 				type: 'post',
 				data : {'id' : delete_id},
 				beforeSend : function( xhr ){

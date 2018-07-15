@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="<?= base_url('resource/js/dropzone/basic.css') ?>">
-<link rel="stylesheet" href="<?= base_url('resource/js/dropzone/dropzone.css') ?>">
+<?php $this->load->view('layout/admin/head_default') ?>
+<?php $this->load->view('layout/admin/nav_default') ?>
 
-<?php echo form_open('#',array('id' => 'form_ajax')); ?>
+<?php echo form_open('#',array('id' => 'form_ajax','enctype'=>'multipart/form-data')); ?>
 
 <div class="col-md-2">Name</div>
 <div class="col-md-10">
@@ -19,6 +19,31 @@
 	?>
 </div>
 
+<div class="col-md-2" style="margin-top: 20px">Type</div>
+<div class="col-md-10"  style="margin-top: 20px">
+	<?php
+		$options = $typeOptions;
+		$optionsSelected = (isset($typeOptionsSelected))?$typeOptionsSelected:null;
+		$extra = 'style="width:50%"';
+		echo form_dropdown('typeOptionsSelected', $options, $optionsSelected,$extra);
+	?>
+</div>
+
+<div class="col-md-2" style="margin-top: 20px">Type name</div>
+<div class="col-md-10" style="margin-top: 20px">
+	<?php 
+		$paramFormInput = array(
+			'name'        => 'type_title',
+			'id'          => 'type_title',
+			'value'       => (isset($type_title))?$type_title:null,					
+			'class'			=> 'form-control',
+	        'style'         => 'width:50%',
+	        'placeholder'	=> ''
+		);
+
+		echo form_input($paramFormInput);
+	?>
+</div>
 
 
 <div class="col-md-12" style="margin-top: 20px">
@@ -29,24 +54,6 @@
 
 	<div class="tab-content" style="margin-top: 20px">
 		<div id="indonesia" class="tab-pane fade in active">
-			<div class="col-md-2">
-				Judul
-			</div>
-			<div class="col-md-10">
-				<?php 
-					$paramFormInput = array(
-						'name'        => 'ind_title',
-						'id'          => 'ind_title',
-						'value'       => (isset($ind_title))?$ind_title:null,					
-						'class'			=> 'form-control',
-				        'style'         => 'width:50%',
-				        'placeholder'	=> ''
-					);
-				
-					echo form_input($paramFormInput);
-				?>
-			</div>
-
 			<div class="col-md-12" style="margin-top: 20px">
 				<?php 
 					$paramFormInput = array(
@@ -62,24 +69,6 @@
 			</div>	
 		</div>
 		<div id="english" class="tab-pane fade">
-			<div class="col-md-2">
-				Title
-			</div>
-			<div class="col-md-10">
-				<?php 
-					$paramFormInput = array(
-						'name'        => 'eng_title',
-						'id'          => 'eng_title',
-						'value'       => (isset($eng_title))?$eng_title:null,					
-						'class'			=> 'form-control',
-				        'style'         => 'width:50%',
-				        'placeholder'	=> ''
-					);
-				
-					echo form_input($paramFormInput);
-				?>
-			</div>
-
 			<div class="col-md-12" style="margin-top: 20px">
 				<?php 
 					$paramFormInput = array(
@@ -97,41 +86,62 @@
 	</div>
 </div>
 
-<?php echo form_close() ?>
-
-<div class="col-md-6">
-	<h3>Image</h3>
-	<form action="<?= site_url('product_type/upload_image')?>" id="upload_image" class="dropzone" enctype="multipart/form-data">
-      	<?php if(isset($image)):?>
-      		<center id="preview_image">
-      			<small><i>image pada database</i></small>
-      			<img class="img-responsive" width="100px" src="<?= base_url('resource/uploaded/product_type_img').'/'.$image ?>">
-      		</center>
-      	<?php endif ?>
-  	</form>
-</div>
-
-<div class="col-md-6">
-	<h3>Background image</h3>
-	<form action="<?= site_url('product_type/upload_background_image')?>" id="upload_background_image" class="dropzone" enctype="multipart/form-data">
-      	<?php if(isset($bg_image)):?>
-      		<center id="preview_bg_image">
-      			<small><i>image pada database</i></small>
-      			<img class="img-responsive" width="100px" src="<?= base_url('resource/uploaded/product_type_bg_img').'/'.$bg_image ?>">
-      		</center>
-      	<?php endif ?>
-  	</form>
-</div>
-
+<div class="col-md-12" style="margin-top: 20px"><b>Features</b></div>
 <div class="col-md-12" style="margin-top: 20px">
-	<center><small>
-		Saat upload file, harap tunggu sampai proses upload selesai, sebelum klik tombol simpan
-	</small></center>
+	<?php if(count($features) > 0): ?>
+		<?php foreach($features as $key => $value): ?>
+			<div class="col-md-3" style="margin-top: 5px">
+				<input type="checkbox"><?= $value ?>
+			</div>
+		<?php endforeach ?>
+	<?php else: ?>
+		No feature data
+	<?php endif ?>
 </div>
+
+<div class="col-md-12" style="margin-top: 20px"><b>Colours</b></div>
+<div class="col-md-12" style="margin-top: 20px" id="dom_color">
+	<div class="row" style="margin-top: 20px">
+		<div class="col-md-3">
+			<?php 
+				$paramFormInput = array(
+					'name'        => 'color_name[]',
+					'id'          => 'color_name[]',
+					'value'       => (isset($color_name))?$color_name:null,					
+					'class'			=> 'form-control',
+			        'placeholder'	=> 'color name'
+				);
+			
+				echo form_input($paramFormInput);
+			?>
+		</div>
+		<div class="col-md-3">
+			<?php 
+				$paramFormInput = array(
+					'name'        => 'color_code[]',
+					'id'          => 'color_code[]',
+					'value'       => (isset($color_code))?$color_code:null,					
+					'class'			=> 'form-control',
+			        'placeholder'	=> 'color code'
+				);
+			
+				echo form_input($paramFormInput);
+			?>
+		</div>
+		<div class="col-md-3">
+			<input type="file" name="color[]">
+		</div>
+		<div class="col-md-3"><button type="button" class="btn btn-sm btn-danger">Delete</button></div>
+	</div>
+</div>
+
+<div id="add_new_color" class="col-md-12" style="margin-top: 20px"><button type="button" class="btn btn-primary">Add new colour</button></div>
+
+<?php echo form_close() ?>
 
 <div class="col-md-12" style="margin-top: 20px">
 	<center>
-		<a href="<?= site_url('product_type')?>"><button class="btn">Kembali</button></a>
+		<a href="<?= site_url('product_crud')?>"><button class="btn">Kembali</button></a>
 		<button class="btn btn-primary" id="simpan">Simpan</button>
 	</center>
 </div>
@@ -140,7 +150,6 @@
 <script src="<?= base_url('resource/js/tiny_mce/tiny_mce.js') ?>"></script>
 <script src="<?= base_url('resource/js/tiny_mce/jquery.tinymce.js') ?>"></script>
 <script src="<?= base_url('resource/js/tiny_mce/plugins/insertdatetime/editor_plugin_src.js') ?>"></script>
-<script src="<?= base_url('resource/js/dropzone/dropzone.js') ?>"></script>
 
 <script type="text/javascript">
 	tinymce.init({
@@ -149,68 +158,33 @@
 
 	});
 
-	Dropzone.autoDiscover = false;
-	new Dropzone("#upload_image",
-		{
-			init: function() {
-				this.on("processing", function(file,status) {toastr['info']('harap tunggu sampai upload selesai')});
-				this.on("success", function(file,status) { 
-					if(status == '1'){
-						$('#preview_image').html('');
-						toastr['success']('Sukses');							
-					}else{
-						toastr['warning']('Gagal');
-					}
-				});
-				this.on("error", function(file) { toastr['warning']('Gagal') });
-			},
-			paramName: "file", // The name that will be used to transfer the file
-			maxFilesize: 2, // MB
-			acceptedFiles: '.jpg,.jpeg,.png'
-		}
-	);
-
-	new Dropzone("#upload_background_image",
-		{
-			init: function() {
-				this.on("processing", function(file,status) {toastr['info']('harap tunggu sampai upload selesai')});
-				this.on("success", function(file,status) { 
-					if(status == '1'){
-						$('#preview_bg_image').html('');
-						toastr['success']('Sukses');
-					}else{
-						toastr['warning']('Gagal');
-					}
-				});
-				this.on("error", function(file) { toastr['warning']('Gagal') });
-			},
-			paramName: "file", // The name that will be used to transfer the file
-			maxFilesize: 2, // MB
-			acceptedFiles: '.jpg,.jpeg,.png',
-			uploadMultiple : false
-		}
-	);
-
-	
-	
+	$('#add_new_color').click(function(){
+		$('#dom_color').append(
+			'<div class="row" style="margin-top:5px">'
+			+'<div class="col-md-3"><input class="form-control" type="text" name="color_name[]" placeholder="color name"></div>'
+			+'<div class="col-md-3"><input class="form-control" type="text" name="color_code[]" placeholder="color code"></div>'
+			+'<div class="col-md-3"><input type="file" class="color" name="color[]" placeholder="color name"></div>'
+			+'<div class="col-md-3"><button type="button" class="btn btn-sm btn-danger" onclick="$(this).parent().parent().remove();" >Delete</button></div>'
+			+'</div>'
+			);
+	})
 	
 	$('#simpan').click(function(){
 		add();
-		
 	})
 
 	function add(){
+		form_serialize=$('#form_ajax').serialize();
+		param_data = {
+			'ind_description' : tinyMCE.get('ind_description').getContent(),
+			'eng_description' : tinyMCE.get('eng_description').getContent()
+		};
+		
 		$.ajax(
 			{
-				url : '<?= site_url('product_type/add')?>',
+				url : '<?= site_url('product_crud/add')?>',
 				type: 'post',
-				data : {
-					'name' : $('#name').val(),
-					'ind_title' : $('#ind_title').val(),
-					'eng_title' : $('#eng_title').val(),
-					'ind_description' : tinyMCE.get('ind_description').getContent(),
-					'eng_description' : tinyMCE.get('eng_description').getContent()
-				},
+				data : form_serialize+'&'+$.param(param_data),
 				beforeSend : function( xhr ){
 					toastr['info']('harap tunggu');
 				},
@@ -221,7 +195,7 @@
 					}else{
 						toastr['success'](hasil.message);
 						setTimeout(function(){
-							window.location.replace('<?= site_url('product_type') ?>');
+							window.location.replace('<?= site_url('product_crud') ?>');
 						}, 1000);
 					}	
 				},
@@ -236,3 +210,7 @@
 	}
 </script>
 
+
+<?php $this->load->view('layout/admin/nav_end_default') ?>
+<?php $this->load->view('layout/admin/js_default') ?>
+<?php $this->load->view('layout/admin/footer_default') ?>
