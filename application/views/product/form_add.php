@@ -101,20 +101,37 @@
 
 <div class="col-md-6">
 	<h3>Image</h3>
-	<form action="<?= site_url('Product/upload_image')?>" id="upload_image" class="dropzone" enctype="multipart/form-data">
-      	
+	<form action="<?= site_url('product_type/upload_image')?>" id="upload_image" class="dropzone" enctype="multipart/form-data">
+      	<?php if(isset($image)):?>
+      		<center>
+      			<small><i>image pada database</i></small>
+      			<img class="img-responsive" width="100px" src="<?= base_url('resource/uploaded/product_type_img').'/'.$image ?>">
+      		</center>
+      	<?php endif ?>
   	</form>
 </div>
 
 <div class="col-md-6">
 	<h3>Background image</h3>
-	<form action="<?= site_url('Product/upload_background_image')?>" id="upload_background_image" class="dropzone" enctype="multipart/form-data">
-      	
+	<form action="<?= site_url('product_type/upload_background_image')?>" id="upload_background_image" class="dropzone" enctype="multipart/form-data">
+      	<?php if(isset($bg_image)):?>
+      		<center>
+      			<small><i>image pada database</i></small>
+      			<img class="img-responsive" width="100px" src="<?= base_url('resource/uploaded/product_type_bg_img').'/'.$bg_image ?>">
+      		</center>
+      	<?php endif ?>
   	</form>
 </div>
 
 <div class="col-md-12" style="margin-top: 20px">
+	<center><small>
+		Saat upload file, harap tunggu sampai proses upload selesai, sebelum klik tombol simpan
+	</small></center>
+</div>
+
+<div class="col-md-12" style="margin-top: 20px">
 	<center>
+		<a href="<?= site_url('product_type')?>"><button class="btn">Kembali</button></a>
 		<button class="btn btn-primary" id="simpan">Simpan</button>
 	</center>
 </div>
@@ -133,27 +150,29 @@
 	});
 
 	Dropzone.autoDiscover = false;
-	new Dropzone("#upload_background_image",
-		{
-			init: function() {
-				this.on("success", function(file,status) { 
-					if(status == '1'){
-						toastr['success']('Sukses');
-					}else{
-						toastr['warning']('Gagal');
-					}
-				});
-				this.on("error", function(file) { toastr['warning']('Gagal') });
-			},
-			paramName: "file", // The name that will be used to transfer the file
-			maxFilesize: 2, // MB
-			acceptedFiles: '.jpg,.jpeg,.png',
-		}
-	);
-
 	new Dropzone("#upload_image",
 		{
 			init: function() {
+				this.on("processing", function(file,status) {toastr['info']('harap tunggu sampai upload selesai')});
+				this.on("success", function(file,status) { 
+					if(status == '1'){
+						toastr['success']('Sukses');							
+					}else{
+						toastr['warning']('Gagal');
+					}
+				});
+				this.on("error", function(file) { toastr['warning']('Gagal') });
+			},
+			paramName: "file", // The name that will be used to transfer the file
+			maxFilesize: 2, // MB
+			acceptedFiles: '.jpg,.jpeg,.png'
+		}
+	);
+
+	new Dropzone("#upload_background_image",
+		{
+			init: function() {
+				this.on("processing", function(file,status) {toastr['info']('harap tunggu sampai upload selesai')});
 				this.on("success", function(file,status) { 
 					if(status == '1'){
 						toastr['success']('Sukses');
@@ -166,8 +185,11 @@
 			paramName: "file", // The name that will be used to transfer the file
 			maxFilesize: 2, // MB
 			acceptedFiles: '.jpg,.jpeg,.png',
+			uploadMultiple : false
 		}
 	);
+
+	
 	
 	
 	$('#simpan').click(function(){
@@ -178,7 +200,7 @@
 	function add(){
 		$.ajax(
 			{
-				url : '<?= site_url('Product/add')?>',
+				url : '<?= site_url('product_type/add')?>',
 				type: 'post',
 				data : {
 					'name' : $('#name').val(),
@@ -188,7 +210,7 @@
 					'eng_description' : tinyMCE.get('eng_description').getContent()
 				},
 				beforeSend : function( xhr ){
-					
+					toastr['info']('harap tunggu');
 				},
 				success: function(result,status,xhr){
 					hasil = JSON.parse(result);
@@ -197,8 +219,8 @@
 					}else{
 						toastr['success'](hasil.message);
 						setTimeout(function(){
-							window.location.replace('<?= site_url('Product') ?>');
-						}, 2000);
+							window.location.replace('<?= site_url('product_type') ?>');
+						}, 1000);
 					}	
 				},
 				complete : function(xhr,status){

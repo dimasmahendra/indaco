@@ -21,10 +21,10 @@
 			<tr>
 				<td><?= $value['name'] ?></td>
 				<td><?= $value['ind_title'] ?></td>
-				<td><?= substr($value['ind_description'],0,240) ?>...</td>
+				<td><?= $value['ind_description'] ?></td>
 				<td>
-					<a href="">edit</a>
-					<a href="">delete</a>
+					<button class="btn btn-sm btn-primary" onclick="form_edit('<?= $value['id'] ?>')">edit</button>
+					<button class="btn btn-sm btn-danger" onclick="confirm_del('<?= $value['name'] ?>','<?= $value['id'] ?>')">delete</button>
 
 				</td>
 			</tr>
@@ -47,15 +47,74 @@
 	function form_add(){
 		$.ajax(
 			{
-				url : '<?= site_url('Product/form_add')?>',
+				url : '<?= site_url('product_type/form_add')?>',
 				type: 'post',
 				data : null,
 				beforeSend : function( xhr ){
-					
+					toastr['info']('harap tunggu');
 				},
 				success: function(result,status,xhr){
 					$('#content-content').html(result);
 
+				},
+				complete : function(xhr,status){
+					
+				},
+				error : function(xhr,status,error)	{
+	
+				}
+			}
+		)	
+	}
+
+	function form_edit(update_id){
+		$.ajax(
+			{
+				url : '<?= site_url('product_type/form_edit')?>',
+				type: 'post',
+				data : {'id':update_id},
+				beforeSend : function( xhr ){
+					toastr['info']('harap tunggu');
+				},
+				success: function(result,status,xhr){
+					$('#content-content').html(result);
+				},
+				complete : function(xhr,status){
+					
+				},
+				error : function(xhr,status,error)	{
+	
+				}
+			}
+		)	
+	}
+
+	function confirm_del(label,id) {
+	    var txt;
+	    if (confirm("Delete "+label+"?")) {
+	        delete_data(id);
+	    }
+	}
+
+	function delete_data(delete_id){
+		$.ajax(
+			{
+				url : '<?= site_url('product_type/delete')?>',
+				type: 'post',
+				data : {'id' : delete_id},
+				beforeSend : function( xhr ){
+					toastr['info']('harap tunggu');
+				},
+				success: function(result,status,xhr){
+					hasil = JSON.parse(result);
+					if(hasil.status == '0'){
+						toastr['warning'](hasil.message);
+					}else{
+						toastr['success'](hasil.message);
+						setTimeout(function(){
+							window.location.replace('<?= site_url('product_type') ?>');
+						}, 1000);
+					}
 				},
 				complete : function(xhr,status){
 					

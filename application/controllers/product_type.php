@@ -1,6 +1,6 @@
 <?php
 
-class Product extends CI_Controller {
+class product_type extends CI_Controller {
 	
 	var $menu = array();
 	var $judul = 'Product type';
@@ -33,7 +33,35 @@ class Product extends CI_Controller {
 		$return = array();
 		$this->session->set_userdata(
 			array(
+				'update_id' => null,
 				'path_file' => $this->generate_random_alphanumeric(),
+				'image' => null,
+				'bg_image' => null	
+			)
+		);
+		
+		$this->load->view('product/form_add',$return);
+	}
+
+	public function form_edit(){
+		$return = array();
+		$id = $this->input->post('id');
+		$data = $this->db->get_where('in_product_type',
+				array(
+					'id' => $id
+				)
+			)->result_array()
+		;
+
+		$return = $data[0];
+		$path_file = $data[0]['image'];
+		$path_file = explode('/',$path_file);
+		$path_file = $path_file[0];
+
+		$this->session->set_userdata(
+			array(
+				'update_id' => $id,
+				'path_file' => $path_file,
 				'image' => null,
 				'bg_image' => null	
 			)
@@ -56,29 +84,55 @@ class Product extends CI_Controller {
 			$message = explode('|',validation_errors());
 			$result['message'] = $message[0];
 			echo json_encode($result);
-		}else if($this->session->userdata('image') == '' ){
+		}else if($this->session->userdata('image') == '' && $this->session->userdata('update_id') == ''){
+			#kalau add dan image kosong
 			$result['status'] = 0;
 			$result['message'] = 'Image required';		
 			echo json_encode($result);	
-		}else if($this->session->userdata('bg_image') == '' ){
+		}else if($this->session->userdata('bg_image') == '' && $this->session->userdata('update_id') == ''){
+			#kalau udpate dan image kosong
 			$result['status'] = 0;
 			$result['message'] = 'BG Image required';
 			echo json_encode($result);			
 		}else{
-			$add = $this->db->insert(
-				'in_product_type',
-				array(
+			if($this->session->userdata('update_id') != ''){
+				$this->db->where('id' , $this->session->userdata('update_id'));
+				$params_update = array(
 					'name' => $this->input->post('name'),
-					'ind_title' => $this->input->post('name'),
-					'eng_title' => $this->input->post('name'),
-					'ind_description' => $this->input->post('name'),
-					'eng_description' => $this->input->post('name'),
-					'image' => $this->session->userdata('image'),
-					'bg_image' => $this->session->userdata('bg_image')
-				)
-			);
+					'ind_title' => $this->input->post('ind_title'),
+					'eng_title' => $this->input->post('eng_title'),
+					'ind_description' => $_POST['ind_description'],
+					'eng_description' => $_POST['eng_description']		
+				);
 
-			if($add == '1'){
+				#kalau ada image aja, baru diupdate
+				if($this->session->userdata('image') != ''){
+					$params_update['image'] = $this->session->userdata('image');
+				}
+				if($this->session->userdata('bg_image') != ''){
+					$params_update['bg_image'] = $this->session->userdata('bg_image');
+				}
+
+				$db_exec = $this->db->update(
+					'in_product_type',$params_update
+				);
+
+			}else{
+				$db_exec = $this->db->insert(
+					'in_product_type',
+					array(
+						'name' => $this->input->post('name'),
+						'ind_title' => $this->input->post('ind_title'),
+						'eng_title' => $this->input->post('eng_title'),
+						'ind_description' => $_POST['ind_description'],
+						'eng_description' => $_POST['eng_description'],
+						'image' => $this->session->userdata('image'),
+						'bg_image' => $this->session->userdata('bg_image')
+					)
+				);
+			}
+
+			if($db_exec == '1'){
 				$result['status'] = 1;
 				$result['message'] = 'Sukses';
 			}else{
@@ -86,12 +140,8 @@ class Product extends CI_Controller {
 				$result['message'] = 'Gagal';
 			}
 
-			echo json_encode($result);		
-
+			echo json_encode($result);	
 		}
-
-
-		
 	}
 
 	public function upload_image(){
@@ -169,6 +219,20 @@ class Product extends CI_Controller {
 		}else{
 			echo '0';
 		}
+	}
+
+	public function delete(){
+		$this->db->where('id',$this->input->post('id'));
+		$db_exec = $this->db->delete('in_product_type');
+		
+		if($db_exec == '1'){
+			$result['status'] = 1;
+			$result['message'] = 'Sukses';
+		}else{
+			$result['status'] = 0;
+			$result['message'] = 'Gagal';
+		}
+		echo json_encode($result);
 	}
 
 	public function generate_random_alphanumeric(){
