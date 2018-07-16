@@ -26,7 +26,7 @@ class product_type extends CI_Controller {
 		#get data
 		$return = array();
 		$return['data'] = $this->db->get('in_product_type')->result_array();
-		$this->load->view('product_type/index',$return); 			
+		$this->load->view('product/index',$return); 			
 	}	
 
 	public function form_add(){
@@ -40,7 +40,7 @@ class product_type extends CI_Controller {
 			)
 		);
 		
-		$this->load->view('product_type/form_add',$return);
+		$this->load->view('product/form_add',$return);
 	}
 
 	public function form_edit(){
@@ -67,7 +67,7 @@ class product_type extends CI_Controller {
 			)
 		);
 		
-		$this->load->view('product_type/form_add',$return);
+		$this->load->view('product/form_add',$return);
 	}
 
 	public function add(){
