@@ -11,76 +11,37 @@ class modelproduk extends CI_Model {
         parent::__construct();
     }
 
-    function getEventArtist($xidx) { /* spertinya perlu lock table */
-        $xStr = "SELECT b.name 
-                FROM event_artist a
-                JOIN artist b
-                WHERE a.event_id = '" . $xidx . "' AND a.artist_id = b.idx";
-        $query = $this->db->query($xStr);
-        $row = $query->result_array();
-        foreach ($row as $key => $value) {
-            $name[] = $value['name'];
+    Function insertInProduct($post) {
+        parse_str($post['forms'], $output);
+        $feature = json_encode(explode(',', $post['feature']), JSON_FORCE_OBJECT);
+        $insert = array(
+            'type_id' => $output['typeOptionsSelected'],
+            'type_title' => $output['type_title'],
+            'name' => $output['name'],
+            'ind_description' => $output['ind_description'],
+            'eng_description' => $output['eng_description'],
+            'features_id' => $feature,
+            'image' => $output['prodimg']
+        );
+        if($this->session->userdata('update_id') != ''){
+            $this->db->where('id', $output['product_id']);
+            $update = $this->db->update('in_products', $insert);
+            if ($update == '1')
+            {
+                return $output['product_id'];
+            } 
+            else 
+            {
+                return FALSE;
+            }
         }
-        return $name;
-    }
-
-    function getListProduk($xAwal, $xLimit, $xSearch = '') {
-        if (!empty($xSearch)) {
-            $xSearch = "
-                Where id like '%" . $xSearch . "%' or ind_title like '%" . $xSearch . "%' or eng_title like '%" . $xSearch . "%'
-            ";
+        else {
+            $this->db->insert('in_products', $insert);           
+            if ($this->db->affected_rows() > 0) {
+                return $this->db->insert_id();
+            } else {
+                return false;
+            }
         }
-        $xStr = "SELECT * FROM in_product_type $xSearch order by id DESC limit " . $xAwal . "," . $xLimit;
-        $query = $this->db->query($xStr);
-        return $query;
     }
-
-    function getDetailProduk($xidx) {
-        $xStr = "SELECT * FROM in_product_type  WHERE id = '" . $xidx . "'";
-        $query = $this->db->query($xStr);
-        $row = $query->row();
-        return $row;
-    }
-
-    Function setInsertProduk($xname, $xtitleindo, $xtitleeng, $xdescindo, $xdesceng, $ximage, $xbackground) {
-        $xStr = " INSERT INTO in_product_type ( name,ind_title,eng_title,ind_description,eng_description,image,bg_image ) 
-                VALUES('" . $xname . "','" . $xtitleindo . "','" . $xtitleeng . "','" . $xdescindo . "','" . $xdesceng . "','" . $ximage . "','" . $xbackground . "')";
-        $query = $this->db->query($xStr);
-        $insert_id = $this->db->insert_id();
-        return $insert_id;
-    }
-
-    Function setUpdateevent($xidx, $xtitleindo, $xtitleeng, $xdescindo, $xdesceng, $xidkat, $xtanggal) {
-        $xStr = " UPDATE event SET " .
-                "title_ind='" . $xtitleindo . "'" .
-                ",title_eng='" . $xtitleeng . "'" .
-                ",description_ind='" . $xdescindo . "'" .
-                ",description_eng='" . $xdesceng . "'" .
-                ",kategori='" . $xidkat . "'" .
-                ",tanggal='" . $xtanggal . "'" .
-                " WHERE idx = '" . $xidx . "'";
-        $query = $this->db->query($xStr);
-        return $query;
-    }
-
-    function setDeleteeventartist($xidx) {
-        $table = "event_artist";
-        $xStr = " DELETE FROM $table WHERE event_id = '" . $xidx . "'";
-        $query = $this->db->query($xStr);
-        $this->setInsertLogDeleteevent($xidx, $table);
-    }
-
-    function setDeleteevent($xidx) {
-        $table = "event";
-        $xStr = " DELETE FROM event WHERE event.idx = '" . $xidx . "'";
-        $query = $this->db->query($xStr);
-        $this->setInsertLogDeleteevent($xidx, $table);
-    }
-
-    function setInsertLogDeleteevent($xidx, $table) {
-        $xidpegawai = $this->session->userdata('idpegawai');
-        $xStr = "insert into logdelrecord(idxhapus,nmtable,tgllog,ideksekusi) values($xidx,'$table',now(),$xidpegawai)";
-        $query = $this->db->query($xStr);
-    }
-
 }
