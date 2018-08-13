@@ -1,0 +1,52 @@
+body {
+		position: relative;
+  }
+  ul.nav-pills {
+		top: 140px;
+		position: fixed;
+		z-index: 999;
+		margin-left: 30px;
+  } 
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    background-color: transparent;
+	}	
+	.nav-pills .nav-link.active i,
+	.nav-pills .nav-link i:hover {
+		border: 3px solid #3549d4;
+		border-radius: 50%;
+		font-size: large;
+	}	
+	.popover {
+		background-color: #3549d4;
+		font-family: inherit;
+		margin-right: -5px;
+	}	
+	.bs-popover-left .arrow::after,
+	.bs-popover-auto[x-placement^="left"] .arrow::after {
+		border-left-color: #3549d4;
+	}  
+  .popover-body {
+  	padding: 6px 10px;
+		color: #fff;
+	}
+	@media (max-width: 768px) {
+		#temukan h2 {
+			font-size: 1.25rem;
+			margin-top: 70px;
+		}
+		.depo-search {
+	    display: block;
+	    width: 100%;
+	  }
+	  .depo-search-inner {
+	    height: auto;
+		}
+		#map {
+	    height: 300px;
+	    margin-top: 370px;
+		}
+		.cari-kota {
+	    margin-top: 15px;
+		}
+	}

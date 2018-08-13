@@ -350,14 +350,14 @@
 				success: function(result,status,xhr){
 					//hasil = JSON.parse(result);
 					console.log(result);
-					/*if(result){
+					if(result){
 						toastr['success']('input berhasil');
 						setTimeout(function(){
 							window.location.replace('<?= site_url('product_crud') ?>');
 						}, 1000);
 					}else{
 						toastr['warning']('input gagal');
-					}*/
+					}
 				},
 				complete : function(xhr,status){
 				
@@ -483,14 +483,14 @@
 				success: function(result,status,xhr){
 					//hasil = JSON.parse(result);
 					console.log(result);
-					/*if(result){
+					if(result){
 						toastr['success']('input berhasil');
 						setTimeout(function(){
 							window.location.replace('<?= site_url('product_crud') ?>');
 						}, 1000);
 					}else{
-						toastr['warning'](hasil.message);
-					}*/
+						toastr['warning']('input gagal');
+					}
 				},
 				complete : function(xhr,status){
 				

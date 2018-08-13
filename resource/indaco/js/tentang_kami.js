@@ -12,9 +12,9 @@ $(document).ready(function () {
         var app = {
             config: {},
             init: function (conf) {
-                app.tentang-kami();
+                app.tentang_kami();
             },
-            tentang-kami: function (e) {
+            tentang_kami: function (e) {
               $(document).ready(function() {
               // Gets the video src from the data-src on each button
               var $videoSrc;  

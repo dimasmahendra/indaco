@@ -19,8 +19,6 @@
 	?>
 </div>
 
-
-
 <div class="col-md-12" style="margin-top: 20px">
 	<ul class="nav nav-tabs">
 		<li class="active"><a data-toggle="tab" href="#indonesia">Indonesia</a></li>
@@ -187,10 +185,7 @@
 			acceptedFiles: '.jpg,.jpeg,.png',
 			uploadMultiple : false
 		}
-	);
-
-	
-	
+	);	
 	
 	$('#simpan').click(function(){
 		add();

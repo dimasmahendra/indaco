@@ -106,7 +106,7 @@
 					}else{
 						toastr['success'](hasil.message);
 						setTimeout(function(){
-							window.location.replace('<?= site_url('product_crud') ?>');
+							window.location.replace('<?= site_url('ctrinspirasi') ?>');
 						}, 1000);
 					}
 				},

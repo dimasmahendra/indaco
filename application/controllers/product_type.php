@@ -75,8 +75,7 @@ class product_type extends CI_Controller {
 		$this->form_validation->set_rules('name', 'Name', 'required');
 		$this->form_validation->set_rules('ind_title', 'Judul indonesia', 'required');
 		$this->form_validation->set_rules('ind_description', 'Deskripsi indonesia', 'required');
-		$this->form_validation->set_rules('eng_title', 'Judul inggris', 'required');
-		$this->form_validation->set_rules('eng_description', 'Deskripsi inggris', 'required');
+
 		$this->form_validation->run();
 		
 		if(validation_errors()){

@@ -142,15 +142,15 @@
 </div>
 <div id="add_new_color" class="col-md-12" style="margin-top: 20px"><button type="button" class="btn btn-primary">Add new colour</button></div>
 
-<div class="col-md-12" style="margin-top: 20px"><b>Files</b></div>
-<div class="col-md-12" style="margin-top: 20px" id="dom_files">
+<div class="col-md-12" style="margin-top: 20px"><b>Color Card</b></div>
+<div class="col-md-12" style="margin-top: 20px">
 	<div class="row" style="margin-top: 20px">
 		<div class="col-md-3">
 			<?php 
 			$paramFormInput = array(
 				'name'        => 'docs_name[]',
 				'id'          => 'docs_name[]',
-				'value'       => null,					
+				'value'       => 'Color Card',					
 				'class'			=> 'form-control',
 				'placeholder'	=> 'Files name'
 			);
@@ -161,11 +161,52 @@
 		<div class="col-md-3">
 			<input type="file" class="docs" name="docs[]" required>
 		</div>
-		<div class="col-md-3"><button type="button" class="btn btn-sm btn-danger">Delete</button></div>
 	</div>
 </div>
 
-<div id="add_new_files" class="col-md-12" style="margin-top: 20px"><button type="button" class="btn btn-primary">Add new files</button></div>
+<div class="col-md-12" style="margin-top: 20px"><b>Data Teknis</b></div>
+<div class="col-md-12" style="margin-top: 20px">
+	<div class="row" style="margin-top: 20px">
+		<div class="col-md-3">
+			<?php 
+			$paramFormInput = array(
+				'name'        => 'docs_name[]',
+				'id'          => 'docs_name[]',
+				'value'       => 'Data Teknis',					
+				'class'			=> 'form-control',
+				'placeholder'	=> 'Files name'
+			);
+
+			echo form_input($paramFormInput);
+			?>
+		</div>
+		<div class="col-md-3">
+			<input type="file" class="docs" name="docs[]" required>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12" style="margin-top: 20px"><b>MSDS</b></div>
+<div class="col-md-12" style="margin-top: 20px">
+	<div class="row" style="margin-top: 20px">
+		<div class="col-md-3">
+			<?php 
+			$paramFormInput = array(
+				'name'        => 'docs_name[]',
+				'id'          => 'docs_name[]',
+				'value'       => 'MSDS',					
+				'class'			=> 'form-control',
+				'placeholder'	=> 'Files name'
+			);
+
+			echo form_input($paramFormInput);
+			?>
+		</div>
+		<div class="col-md-3">
+			<input type="file" class="docs" name="docs[]" required>
+		</div>
+	</div>
+</div>
 
 <?php echo form_close() ?>
 
@@ -194,16 +235,6 @@
 			+'<div class="col-md-3"><input class="form-control" type="text" class="color_name" name="color_name[]" placeholder="color name"></div>'
 			+'<div class="col-md-3"><input class="form-control" type="text" class="color_code" name="color_code[]" placeholder="color code"></div>'
 			+'<div class="col-md-3"><input type="file" id="file-select" class="color" name="color[]" placeholder="color name" required></div>'
-			+'<div class="col-md-3"><button type="button" class="btn btn-sm btn-danger" onclick="$(this).parent().parent().remove();" >Delete</button></div>'
-			+'</div>'
-			);
-	})
-
-	$('#add_new_files').click(function(){
-		$('#dom_files').append(
-			'<div class="row" style="margin-top:5px">'
-			+'<div class="col-md-3"><input class="form-control" type="text" name="docs_name[]" placeholder="Files name"></div>'
-			+'<div class="col-md-3"><input type="file" class="docs" name="docs[]" placeholder="Files name" required></div>'
 			+'<div class="col-md-3"><button type="button" class="btn btn-sm btn-danger" onclick="$(this).parent().parent().remove();" >Delete</button></div>'
 			+'</div>'
 			);
@@ -272,14 +303,14 @@
 				success: function(result,status,xhr){
 					//hasil = JSON.parse(result);
 					console.log(result);
-					if(result){
+					/*if(result){
 						toastr['success']('input berhasil');
 						setTimeout(function(){
 							window.location.replace('<?= site_url('product_crud') ?>');
 						}, 1000);
 					}else{
 						toastr['warning']('input gagal');
-					}
+					}*/
 				},
 				complete : function(xhr,status){
 				

@@ -5,6 +5,7 @@
 <script src="<?= base_url('resource/admin/vendor/datatables-plugins/dataTables.bootstrap.min.js') ?>"></script>
 <script src="<?= base_url('resource/admin/vendor/datatables-responsive/dataTables.responsive.js') ?>"></script>
 <script src="<?= base_url('resource/js/toastr/toastr.min.js') ?>"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASo2vyxH5Jtospri11CkSV-d2Nv0JDyfg"></script>
 
 
 <script type="text/javascript">

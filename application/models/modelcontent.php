@@ -12,6 +12,42 @@ class modelcontent extends CI_Model {
         parent::__construct();
     }
 
+    Function insertInPost($post) {
+        parse_str($post['forms'], $output);
+        $feature = json_encode(explode(',', $post['feature']), JSON_FORCE_OBJECT);
+        $insert = array(
+            'title' => $output['name_post'],
+            'author' => $output['author_post'],
+            'content' => $output['content_post'],
+            'image' => $output['prodimg'],
+            'image_popup' => $output['prodimgthumb'],
+            'video_url' => $output['video_post'],
+            'categories' => $feature,
+            'source' => $output['source_post'],
+            'created' => 0
+        );
+        if($this->session->userdata('update_id') != ''){
+            $this->db->where('id', $output['post_id']);
+            $update = $this->db->update('in_post_content', $insert);
+            if ($update == '1')
+            {
+                return $output['post_id'];
+            } 
+            else 
+            {
+                return FALSE;
+            }
+        }
+        else {
+            $this->db->insert('in_post_content', $insert);           
+            if ($this->db->affected_rows() > 0) {
+                return $this->db->insert_id();
+            } else {
+                return false;
+            }
+        }
+    }
+
     function getArrayListcontent() { /* spertinya perlu lock table */
         $xBuffResul = array();
         $xStr = "SELECT " .

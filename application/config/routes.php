@@ -42,10 +42,18 @@ $route['default_controller'] = "ctrpublic";
 $route['404_override'] = '';
 
 $route['product'] = 'ctrpublic/product';
-$route['product/(:any)'] = 'ctrpublic/product/$1';
+$route['productDetail/(:any)'] = 'ctrpublic/productDetail/$1';
 $route['inspirasi'] = 'ctrpublic/inspirasi';
 $route['cara-kami'] = 'ctrpublic/cara_kami';
 $route['tentang-kami'] = 'ctrpublic/tentang_kami';
+$route['hubungi-kami'] = 'ctrpublic/hubungi_kami';
+$route['hubungi-kami/(:any)'] = 'ctrpublic/hubungi_kami/$1';
+$route['proyek'] = 'ctrpublic/proyek';
+$route['csr'] = 'ctrpublic/csr';
+$route['faq'] = 'ctrpublic/faq';
+$route['search'] = 'ctrpublic/search';
+$route['berita'] = 'ctrpublic/berita';
+// $route['(:any)'] = 'ctrpublic/$1';
 
 $route['admin'] = 'webadmindo';
 

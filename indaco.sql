@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 11, 2018 at 08:28 AM
+-- Generation Time: Jul 24, 2018 at 01:21 AM
 -- Server version: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.0.30-0ubuntu0.16.04.1
 
@@ -335,7 +335,11 @@ CREATE TABLE `in_post_categories` (
 
 INSERT INTO `in_post_categories` (`id`, `name`, `description`) VALUES
 (1, 'Eksterior', ''),
-(2, 'Interior', '');
+(2, 'Interior', ''),
+(15, 'Mebel', ''),
+(16, 'aa', ''),
+(17, 'apel', ''),
+(18, 'vvv', '');
 
 -- --------------------------------------------------------
 
@@ -360,8 +364,9 @@ CREATE TABLE `in_post_content` (
 --
 
 INSERT INTO `in_post_content` (`id`, `title`, `author`, `content`, `image`, `video_url`, `categories`, `source`, `created`) VALUES
-(1, 'Solusi Dinding Lembab Saat Musim Penghujan', 'Aji Baskoro', 'Memasuki musim penghujan, dinding rumah mesti menjadi perhatian. Pasalnya, guyuran air hujan yang terus menerus dapat berdampak buruk pada dinding rumah. Dinding akan menjadi lembab. Kelembaban tidak hanya terjadi pada dinding luar rumah yang langsung menerima guyuran air hujan, tetapi juga kerap merembes sampai ke dinding bagian dalam.\r\n\r\nKelembaban yang terjadi pada dinding rumah tidak boleh diabaikan. Pasalnya, hal itu dapat memicu kerusakan-kerusakan lain yang lebih parah, misalnya lapisan cat menjadi mengapur, menggelembung atau mengelupas. Kerusakan tersebut terjadi karena tingginya kadar air di dalam dinding.\r\n\r\nSalah satu cara supaya dinding rumah tidak lembab selama musim penghujan, adalah dengan melapisi dinding dengan cat tembok tahan air. Namun sebelumnya, ada beberapa prosedur yang harus dilakukan sehingga hasil pengecatan bisa optimal.\r\n\r\nPertama-tama, harus dipastikan bahwa kelembaban yang terjadi pada dinding tidak disebabkan oleh kebocoran. Jika ternyata kelembaban tersebut akibat kebocoran, maka kebocoran itulah yang wajib diselesaikan terlebih dahulu.\r\n\r\nJika kondisi dinding belum lembab, maka pengecatan bisa langsung dilakukan. Sementara jika dinding sudah lembab, harus dipastikan terlebih dahulu bahwa cat lama yang masih menempel dalam kondisi baik dan tidak mudah mengelupas. Jika cat dinding ternyata sudah mengelupas, maka perlu dilakukan pengerokan hingga bersih sebelum memulai pengecatan.\r\n\r\nUntuk mendapatkan perlindungan optimal pada dinding rumah, disarankan supaya memilih produk cat dinding dengan kualitas prima, baik dalam hal ketahanan warna, maupun kerekatan lapisan. Terlebih, untuk dinding luar ruangan yang langsung terkena sinar matahari dan air hujan.\r\n\r\nDalam hal ini, dua produk unggulan PT. Indaco Warna Dunia dapat menjadi pilihan yang tepat. Yang pertama adalah Belazo Climagard, cat eksterior yang tidak hanya memberikan perlindungan cuaca hingga tujuh tahun, tetapi juga memiliki ribuan pilhan warna menarik. Yang kedua adalah Top Seal, cat dengan lapisan elastis yang dapat menahan air hujan, sehingga tidak mudah meresap ke dalam lapisan tembok.', 'carakami-eksterior-1.jpg', NULL, '{0:1,1:5}', 'www.bernas.id', 0),
-(2, 'Penyebab Nailhead Rusting', '', 'Bagaimana memperbaiki dinding yang sudah kena nailhead rusting?\r\n\r\nNailhead Rusting merupakan situasi di mana paku berkarat yang menancap ke dinding menimbulkan noda cokelat kemerahan di permukaan cat. Sebabnya, paku yang digunakan tidak dilapisi anti karat sehingga tidak tahan lama. Dalam mengatasi hal ini, Anda bisa mencegahnya dengan memilih paku yang sudah mengandung lapisan anti karat.\r\n\r\nBagaimana memperbaiki dinding yang sudah kena nailhead rusting?\r\n\r\nMemperbaiki dinding dengan nailhead rusting memang tidak mudah, karena tidak cukup dengan langsung melapisi ulang dengan cat baru. Berikut beberapa hal yang bisa Anda terapkan:\r\n\r\nAmpelas bagian dinding yang kena karat atau nailhead rusting. Ini adalah satu cara untuk membersihkan bekas karat hingga tidak bersisa.\r\nMelapisi dengan primer anti karat. Dalam hal ini Anda bisa gunakan Envi Anti Corrosive Primer. Lalu cat ulang dengan Envi Wall Putty.\r\nLalu Anda bisa memaku ulang dengan paku baru. Tentunya yang mengandung lapisan anti karat, atau berbahan galvanis.', 'carakami-eksterior-2.jpg', NULL, '{0:1,1:5}', '', 0);
+(1, 'Solusi Dinding Lembab Saat Musim Penghujan', 'Aji Baskoro', 'Memasuki musim penghujan, dinding rumah mesti menjadi perhatian. Pasalnya, guyuran air hujan yang terus menerus dapat berdampak buruk pada dinding rumah. Dinding akan menjadi lembab. Kelembaban tidak hanya terjadi pada dinding luar rumah yang langsung menerima guyuran air hujan, tetapi juga kerap merembes sampai ke dinding bagian dalam.\r\n\r\nKelembaban yang terjadi pada dinding rumah tidak boleh diabaikan. Pasalnya, hal itu dapat memicu kerusakan-kerusakan lain yang lebih parah, misalnya lapisan cat menjadi mengapur, menggelembung atau mengelupas. Kerusakan tersebut terjadi karena tingginya kadar air di dalam dinding.\r\n\r\nSalah satu cara supaya dinding rumah tidak lembab selama musim penghujan, adalah dengan melapisi dinding dengan cat tembok tahan air. Namun sebelumnya, ada beberapa prosedur yang harus dilakukan sehingga hasil pengecatan bisa optimal.\r\n\r\nPertama-tama, harus dipastikan bahwa kelembaban yang terjadi pada dinding tidak disebabkan oleh kebocoran. Jika ternyata kelembaban tersebut akibat kebocoran, maka kebocoran itulah yang wajib diselesaikan terlebih dahulu.\r\n\r\nJika kondisi dinding belum lembab, maka pengecatan bisa langsung dilakukan. Sementara jika dinding sudah lembab, harus dipastikan terlebih dahulu bahwa cat lama yang masih menempel dalam kondisi baik dan tidak mudah mengelupas. Jika cat dinding ternyata sudah mengelupas, maka perlu dilakukan pengerokan hingga bersih sebelum memulai pengecatan.\r\n\r\nUntuk mendapatkan perlindungan optimal pada dinding rumah, disarankan supaya memilih produk cat dinding dengan kualitas prima, baik dalam hal ketahanan warna, maupun kerekatan lapisan. Terlebih, untuk dinding luar ruangan yang langsung terkena sinar matahari dan air hujan.\r\n\r\nDalam hal ini, dua produk unggulan PT. Indaco Warna Dunia dapat menjadi pilihan yang tepat. Yang pertama adalah Belazo Climagard, cat eksterior yang tidak hanya memberikan perlindungan cuaca hingga tujuh tahun, tetapi juga memiliki ribuan pilhan warna menarik. Yang kedua adalah Top Seal, cat dengan lapisan elastis yang dapat menahan air hujan, sehingga tidak mudah meresap ke dalam lapisan tembok.', 'carakami-eksterior-1.jpg', NULL, '{"0":"1"}', 'www.bernas.id', 0),
+(2, 'Penyebab Nailhead Rusting', '', 'Bagaimana memperbaiki dinding yang sudah kena nailhead rusting?\r\n\r\nNailhead Rusting merupakan situasi di mana paku berkarat yang menancap ke dinding menimbulkan noda cokelat kemerahan di permukaan cat. Sebabnya, paku yang digunakan tidak dilapisi anti karat sehingga tidak tahan lama. Dalam mengatasi hal ini, Anda bisa mencegahnya dengan memilih paku yang sudah mengandung lapisan anti karat.\r\n\r\nBagaimana memperbaiki dinding yang sudah kena nailhead rusting?\r\n\r\nMemperbaiki dinding dengan nailhead rusting memang tidak mudah, karena tidak cukup dengan langsung melapisi ulang dengan cat baru. Berikut beberapa hal yang bisa Anda terapkan:\r\n\r\nAmpelas bagian dinding yang kena karat atau nailhead rusting. Ini adalah satu cara untuk membersihkan bekas karat hingga tidak bersisa.\r\nMelapisi dengan primer anti karat. Dalam hal ini Anda bisa gunakan Envi Anti Corrosive Primer. Lalu cat ulang dengan Envi Wall Putty.\r\nLalu Anda bisa memaku ulang dengan paku baru. Tentunya yang mengandung lapisan anti karat, atau berbahan galvanis.', 'carakami-eksterior-2.jpg', NULL, '{"0":"1","1":"2"}', '', 0),
+(18, 'Pelangi', 'Vina', '<p>Selamat datang pelangi</p>', 'download (2).jpeg', 'https://www.youtube.com/watch?v=RvWbcK3YQ_o', '{"0":"17","1":"18"}', 'internet', 0);
 
 -- --------------------------------------------------------
 
@@ -385,9 +390,10 @@ CREATE TABLE `in_products` (
 --
 
 INSERT INTO `in_products` (`id`, `type_id`, `type_title`, `name`, `ind_description`, `eng_description`, `features_id`, `image`) VALUES
-(1, 1, 'WATER BASED SYSTEM', 'Alkali Sealer', 'Belazo Alkali Sealer - Water Based Alkali Sealer adalah cat dasar premium berbahan dasar air dengan perlindungan ganda terhadap serangan garam- garam alkali pada permukaan tembok baru, batu bata, plester dan asbes di dalam maupun di luar ruangan. Belazo Alkali Sealer mempunyai keunggulan untuk meningkatkan daya rekat cat tembok di atasnya, sehingga terhindar dari masalah menggelembung, mengelupas dan mengapur.\r\n\r\nPetunjuk pemakaian untuk hasil terbaik : Untuk permukaan tembok baru, permukaan yang akan dicat harus dibersihkan dahulu dengan baik. Pastikan permukaan tembok sudah kering (pembacaan skala protimeter di bawah 18% dan kadar keasaman tembok 7-8). Lapiskan Belazo Alkali Sealer 1x lapis dengan pengenceran 15% air bersih.\r\n\r\nUntuk permukaan tembok lama, apabila cat lama sudah mengelupas atau mengapur harus dikerok terlebih dahulu. Bila diperlukan, amplas dan bersihkan debu hasil pengamplasan. Aplikasikan Belazo Alkali Sealer 1x lapis dengan pengenceran 15% air bersih, dan kuaskan secara merata di seluruh permukaan tembok. Untuk hasil yang sempurna, gunakan minimum 2 lapisan cat akhir.\r\n\r\nPetunjuk keselamatan : Kemasan cat harus tertutup rapat dan jangan sampai terkena mata. Perhatikan sirkulasi udara selama pengecatan. Gunakan air bersih untuk membersihkan semua peralatan. Buanglah sisa bahan di tempat yang diijinkan menurut peraturan yang ada.', NULL, '{0:1,1:2,2:5}', 'belazo-alkalisealer.png'),
-(2, 1, 'WATER BASED SYSTEM', 'Kidzdream', 'Belazo Kidzdream - Easy Wash adalah cat tembok interior bagi Anda yang mendukung dan mengembangkan kreasi anak tanpa harus khawatir tembok akan kotor. Dengan Stain Proof Anti Graffiti Technology, terbukti mampu menahan noda seperti kopi, teh, krayon, lumpur, debu dan noda lainnya yang tidak meresap dalam lapisan cat, sehingga dapat dibersihkan tanpa merusak lapisan cat.\r\n\r\nPetunjuk pemakaian untuk hasil terbaik : Pastikan dinding telah benar-benar kering dan bersih sebelum dicat. Amplas permukaan dinding jika perlu. Untuk permukaan tembok baru sebaiknya diberikan waktu pengeringan semen minimal 1 bulan dengan kadar air maksimum 18% dan maksimum pH 8.\r\n\r\nUntuk permukaan tembok lama periksa dahulu daya rekat cat tembok yang lama. Jika diperlukan, lakukan pengerokan kemudian dibersihkan kembali. Berilah satu lapis Belazo Alkali Sealer sebelum mengecat permukaan tersebut dengan Belazo Kidzdream terutama pada permukaan tembok baru atau pada permukaan tembok lama yang mempunyai kelembaban tinggi.\r\n\r\nDaya sebar optimum adalah 13-15 m2/liter per lapisan, tergantung porositas permukaan.\r\n\r\nPetunjuk keselamatan : Kemasan cat harus tertutup rapat dan jangan sampai terkena mata. Perhatikan sirkulasi udara selama pengecatan. Gunakan air bersih untuk membersihkan semua peralatan. Buanglah sisa bahan di tempat yang diijinkan menurut peraturan yang ada.', NULL, '{0:2,1:3,3:5,4:1}', 'belazo-kidzdream.png'),
-(3, 1, 'WATER BASED SYSTEM', 'Maxima', 'Belazo Maxima - Durable Luxurious Finish adalah cat tembok 100% akrilik berbahan dasar air untuk hasil maksimal dan mewah pada dinding interior. Dengan Multi Function Formula yang memiliki daya rekat tinggi, sempurna untuk aplikasi pada dinding yang menggunakan cat dasar Belazo Alkali Sealer. Belazo Maxima tanpa timbal dan merkuri serta rendah VOC, bau dan toksisitas.\r\n\r\nPetunjuk untuk pemakaian terbaik : Pastikan dinding telah benar-benar kering dan bersih sebelum dicat. Amplas permukaan dinding jika perlu. Untuk permukaan tembok baru sebaiknya diberikan waktu pengeringan semen minimal 1 bulan dengan kadar air maksimum 18% dan maksimum pH 8. Untuk permukaan tembok lama, periksa dahulu daya rekat cat tembok yang lama. Jika diperlukan, lakukan pengerokan kemudian dibersihkan kembali. Berilah satu lapis Belazo Alkali Sealer sebelum mengecat permukaan tersebut dengan Belazo Maxima terutama pada permukaan tembok baru atau pada permukaan tembok lama yang mempunyai kelembaban tinggi. Daya sebar optimum adalah 14-16 m2/liter per lapisan, tergantung porositas permukaan.\r\n\r\nPetunjuk keselamatan : Kemasan cat harus tertutup rapat dan jangan sampai terkena mata. Perhatikan sirkulasi udara selama pengecatan. Gunakan air bersih untuk membersihkan semua peralatan. Buanglah sisa bahan di tempat yang diijinkan menurut peraturan yang ada.', NULL, NULL, 'belazo-maxima.png');
+(1, 1, 'WATER BASED SYSTEM', 'Alkali Sealer', '<p>Belazo Alkali Sealer - Water Based Alkali Sealer adalah cat dasar premium berbahan dasar air dengan perlindungan ganda terhadap serangan garam- garam alkali pada permukaan tembok baru, batu bata, plester dan asbes di dalam maupun di luar ruangan. Belazo Alkali Sealer mempunyai keunggulan untuk meningkatkan daya rekat cat tembok di atasnya, sehingga terhindar dari masalah menggelembung, mengelupas dan mengapur. Petunjuk pemakaian untuk hasil terbaik : Untuk permukaan tembok baru, permukaan yang akan dicat harus dibersihkan dahulu dengan baik. Pastikan permukaan tembok sudah kering (pembacaan skala protimeter di bawah 18% dan kadar keasaman tembok 7-8). Lapiskan Belazo Alkali Sealer 1x lapis dengan pengenceran 15% air bersih. Untuk permukaan tembok lama, apabila cat lama sudah mengelupas atau mengapur harus dikerok terlebih dahulu. Bila diperlukan, amplas dan bersihkan debu hasil pengamplasan. Aplikasikan Belazo Alkali Sealer 1x lapis dengan pengenceran 15% air bersih, dan kuaskan secara merata di seluruh permukaan tembok. Untuk hasil yang sempurna, gunakan minimum 2 lapisan cat akhir. Petunjuk keselamatan : Kemasan cat harus tertutup rapat dan jangan sampai terkena mata. Perhatikan sirkulasi udara selama pengecatan. Gunakan air bersih untuk membersihkan semua peralatan. Buanglah sisa bahan di tempat yang diijinkan menurut peraturan yang ada.</p>', '', '{"0":"1","1":"2","2":"3","3":"4"}', 'belazo-alkalisealer.png'),
+(2, 1, 'WATER BASED SYSTEM', 'Kidzdream', 'Belazo Kidzdream - Easy Wash adalah cat tembok interior bagi Anda yang mendukung dan mengembangkan kreasi anak tanpa harus khawatir tembok akan kotor. Dengan Stain Proof Anti Graffiti Technology, terbukti mampu menahan noda seperti kopi, teh, krayon, lumpur, debu dan noda lainnya yang tidak meresap dalam lapisan cat, sehingga dapat dibersihkan tanpa merusak lapisan cat.\r\n\r\nPetunjuk pemakaian untuk hasil terbaik : Pastikan dinding telah benar-benar kering dan bersih sebelum dicat. Amplas permukaan dinding jika perlu. Untuk permukaan tembok baru sebaiknya diberikan waktu pengeringan semen minimal 1 bulan dengan kadar air maksimum 18% dan maksimum pH 8.\r\n\r\nUntuk permukaan tembok lama periksa dahulu daya rekat cat tembok yang lama. Jika diperlukan, lakukan pengerokan kemudian dibersihkan kembali. Berilah satu lapis Belazo Alkali Sealer sebelum mengecat permukaan tersebut dengan Belazo Kidzdream terutama pada permukaan tembok baru atau pada permukaan tembok lama yang mempunyai kelembaban tinggi.\r\n\r\nDaya sebar optimum adalah 13-15 m2/liter per lapisan, tergantung porositas permukaan.\r\n\r\nPetunjuk keselamatan : Kemasan cat harus tertutup rapat dan jangan sampai terkena mata. Perhatikan sirkulasi udara selama pengecatan. Gunakan air bersih untuk membersihkan semua peralatan. Buanglah sisa bahan di tempat yang diijinkan menurut peraturan yang ada.', NULL, '{"0":2,"1":3,"3":5,"4":1}', 'belazo-kidzdream.png'),
+(3, 1, 'WATER BASED SYSTEMa', 'Maximaa', '<p>Belazo Maxima - Durable Luxurious Finish adalah cat tembok 100% akrilik berbahan dasar air untuk hasil maksimal dan mewah pada dinding interior. Dengan Multi Function Formula yang memiliki daya rekat tinggi, sempurna untuk aplikasi pada dinding yang menggunakan cat dasar Belazo Alkali Sealer. Belazo Maxima tanpa timbal dan merkuri serta rendah VOC, bau dan toksisitas. Petunjuk untuk pemakaian terbaik : Pastikan dinding telah benar-benar kering dan bersih sebelum dicat. Amplas permukaan dinding jika perlu. Untuk permukaan tembok baru sebaiknya diberikan waktu pengeringan semen minimal 1 bulan dengan kadar air maksimum 18% dan maksimum pH 8. Untuk permukaan tembok lama, periksa dahulu daya rekat cat tembok yang lama. Jika diperlukan, lakukan pengerokan kemudian dibersihkan kembali. Berilah satu lapis Belazo Alkali Sealer sebelum mengecat permukaan tersebut dengan Belazo Maxima terutama pada permukaan tembok baru atau pada permukaan tembok lama yang mempunyai kelembaban tinggi. Daya sebar optimum adalah 14-16 m2/liter per lapisan, tergantung porositas permukaan. Petunjuk keselamatan : Kemasan cat harus tertutup rapat dan jangan sampai terkena mata. Perhatikan sirkulasi udara selama pengecatan. Gunakan air bersih untuk membersihkan semua peralatan. Buanglah sisa bahan di tempat yang diijinkan menurut peraturan yang ada.</p>', '', '{"0":"1","1":"6","2":"11"}', 'xs.jpg'),
+(4, 4, 'SS', 'Vina', '<p>zxc</p>', '<p>zxc</p>', '{"0":"1","1":"2"}', 'belazo-age.png');
 
 -- --------------------------------------------------------
 
@@ -410,8 +416,15 @@ CREATE TABLE `in_product_color` (
 INSERT INTO `in_product_color` (`id`, `product_id`, `name`, `code`, `image`) VALUES
 (1, 2, 'Souffle', '50001', '50001-souffle.png'),
 (2, 2, 'Sunblame', '50002', '50002-sunblame.png'),
-(3, 3, 'Mermaid Green', '48021', '48021-mermaid-green.png'),
-(4, 3, 'Autumn Green', '48055', '48055-autumn-green.png');
+(4, 3, 'Autumn Greenasd', '48055', 'readybuildingfull.png'),
+(5, 3, 'Autumn Greenasd', '48055', 'no-img-brochure.jpg'),
+(6, 3, 'Autumn Greenasd', '48055', 'readybuildingfull.png'),
+(7, 3, 'Autumn Greenasd', '48055', 'readybuildingfull.png'),
+(9, 4, 'R&B', '9090', 'belazo-age.png'),
+(10, 4, 'aa', 'b', 'Sydney_International_Boast_Show.jpg'),
+(11, 4, 'ccc', 'ddd', 'wp-14556242745821.jpg'),
+(12, 4, 'ee', 'fff', 'E22.jpg'),
+(13, 4, 'ggg', 'hhh', '2c2ade20128915.jpg');
 
 -- --------------------------------------------------------
 
@@ -466,10 +479,12 @@ CREATE TABLE `in_product_file` (
 --
 
 INSERT INTO `in_product_file` (`id`, `product_id`, `name`, `filename`) VALUES
-(1, 1, 'Color Card', 'file1.pdf'),
-(2, 1, 'Data Teknis', 'file2.pdf'),
 (3, 2, 'Color Card', 'file3.pdf'),
-(4, 2, 'MDS', 'file4.pdf');
+(4, 3, 'MDS', 'file4.pdf'),
+(6, 4, 'cvb', 'SK_DIP3.pdf'),
+(7, 4, 'fff', 'SOP PELAYANAN INFORMASI PUBLIK.pdf'),
+(8, 4, 'ggg', 'STRUKTUR PPID PEMBANTU KECAMATAN TEMBALANG KOTA SEMARANG.pdf'),
+(9, 1, 'MSDS', 'MSDS BELAZO ALKALI SEALER.docx');
 
 -- --------------------------------------------------------
 
@@ -493,8 +508,10 @@ CREATE TABLE `in_product_type` (
 --
 
 INSERT INTO `in_product_type` (`id`, `name`, `ind_title`, `eng_title`, `ind_description`, `eng_description`, `image`, `bg_image`) VALUES
-(1, 'Belazo', 'Water Based System', NULL, 'Belazo Kidzdream adalah cat tembok interior bagi Anda yang mendukung dan mengembangkan kreasi anak tanpa harus khawatir tembok akan kotor. Dengan Stain Proof Anti Graffiti Technology, terbukti mampu menahan noda seperti kopi, teh, krayon, lumpur.', NULL, 'belazo-kidzdream.png', 'par-belazo-bg.jpg'),
-(2, 'Envi', 'Water Based & Solvent Based System', NULL, 'Adalah cat tembok yang memberikan permukaan yang halus dan mudah dibersihkan dengan air. Envi Latex Wall Paint dapat diaplikasikan untuk segala jenis permukaan tembok dan plafon yang terbuat dari beton, plaster, fiber, triplex maupun kayu.', NULL, 'envi-latexwallpaint.png', 'par-envi-bg.jpg');
+(1, 'Belazo', 'Water Based System', 'Water Based System', '<p>Belazo Kidzdream adalah cat tembok interior bagi Anda yang mendukung dan mengembangkan kreasi anak tanpa harus khawatir tembok akan kotor. Dengan Stain Proof Anti Graffiti Technology, terbukti mampu menahan noda seperti kopi, teh, krayon, lumpur.</p>', '<p>Belazo Kidzdream adalah cat tembok interior bagi Anda yang mendukung dan mengembangkan kreasi anak tanpa harus khawatir tembok akan kotor. Dengan Stain Proof Anti Graffiti Technology, terbukti mampu menahan noda seperti kopi, teh, krayon, lumpur.</p>', 'belazo-kidzdream.png/20180723235751.png', 'belazo-kidzdream.png/20180723235805.jpg'),
+(2, 'Envi', 'Water Based & Solvent Based System', 'Water Based & Solvent Based System', '<p>Adalah cat tembok yang memberikan permukaan yang halus dan mudah dibersihkan dengan air. Envi Latex Wall Paint dapat diaplikasikan untuk segala jenis permukaan tembok dan plafon yang terbuat dari beton, plaster, fiber, triplex maupun kayu.</p>', '<p>Adalah cat tembok yang memberikan permukaan yang halus dan mudah dibersihkan dengan air. Envi Latex Wall Paint dapat diaplikasikan untuk segala jenis permukaan tembok dan plafon yang terbuat dari beton, plaster, fiber, triplex maupun kayu.</p>', 'envi-latexwallpaint.png/20180723235833.png', 'envi-latexwallpaint.png/20180723235843.jpg'),
+(4, 'TOP SEAL', 'Cat Pelapis Anti Bocor dan Anti Alkali', 'Cat Pelapis Anti Bocor dan Anti Alkali', '<p>Top Seal adalah pelapis anti bocor dan anti alkali ramah lingkungan yang memiliki sifat elastis, kedap air dan tahan cuaca.</p>', '<p>Dimas b</p>', 'ras4o41gxgfzgz6/20180724000835.png', 'ras4o41gxgfzgz6/20180724000842.jpg'),
+(6, 'HOT SEAL', 'Peredam Panas dan Anti Bocor', 'Peredam Panas dan Anti Bocor', '<p>Hot Seal adalah pelapis atap (seng, galvanis dan genteng) anti bocor yang mampu menolak radiasi panas matahari sehingga munurunkan suhu ruangan sampai 7&deg; Celcius.</p>', '<p>Hot Seal adalah pelapis atap (seng, galvanis dan genteng) anti bocor yang mampu menolak radiasi panas matahari sehingga munurunkan suhu ruangan sampai 7&deg; Celcius.</p>', '56h4l1xiyx21tb6/20180724000816.png', '56h4l1xiyx21tb6/20180724000824.jpg');
 
 -- --------------------------------------------------------
 
@@ -1251,21 +1268,15 @@ INSERT INTO `menu` (`idmenu`, `nmmenu`, `tipemenu`, `idkomponen`, `iduser`, `par
 (6, 'LOGOUT', 1, 2, 0, 0, 'webadmindo/logout', 21, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', 1, 'Y'),
 (35, 'User Access', 1, 2, 0, 34, 'ctrusermenu', 2, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', 1, 'Y'),
 (36, 'User Group', 1, 2, 0, 34, 'ctrusergroup', 3, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', 1, 'Y'),
-(334, 'Category', 2, 2, 0, 332, 'ctrkategori', 0, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
+(344, 'Post Content', 1, 2, 1, 0, 'ctrpostcontent', 3, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
 (322, 'User', 1, 2, 0, 34, 'ctrusersistem', 0, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
-(333, 'List About', 2, 2, 0, 332, 'ctrpage', 3, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
-(332, 'About Page', 1, 2, 0, 0, '#', 6, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
-(331, 'Category Event', 2, 2, 0, 329, 'ctrcategoryevent', 2, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
-(330, 'List Event', 2, 2, 0, 329, 'ctrevent', 0, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
+(341, 'Produk Type', 1, 2, 1, 0, 'product_type', 0, 2, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
+(342, 'Product', 1, 2, 1, 0, 'product_crud', 1, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
+(343, 'Inspirasi', 1, 2, 1, 0, 'ctrinspirasi', 2, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
 (326, 'Setting', 1, 2, 0, 0, '#', 10, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
 (327, 'Language', 2, 2, 0, 326, 'ctrbahasa', 1, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
 (328, 'Image Manager', 2, 2, 0, 326, 'ctrimagemanager', 2, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
-(325, 'Menu', 1, 2, 0, 0, 'ctrmenuutama', 5, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
-(329, 'Exhibition / Event', 1, 2, 0, 0, '#', 1, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
-(335, 'About', 1, 2, 1, 0, 'ctrabout', 0, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
-(337, 'List Artist', 2, 2, 0, 329, 'ctrartist', 1, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
-(339, 'Program Threads', 1, 2, 0, 0, 'ctrthread', 2, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N'),
-(340, 'Residency Program', 1, 2, 0, 0, 'ctrresiden', 3, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N');
+(325, 'Menu', 1, 2, 0, 0, 'ctrmenuutama', 5, 0, 'xbahasa:Bahasa,;xjudul:Judul,;xisi:Isi / Keterangan,kontent;xisiawal:Isi Awal,Isikan Jika Diperlukan;xurut:urutan,urutan saat ditampilkan diweb;xgb1:,Upload Gambar 1;xgb2:,Upload Gambar 2;xgb3:,Upload Gambar 3;', NULL, 'N');
 
 -- --------------------------------------------------------
 
@@ -2046,22 +2057,22 @@ ALTER TABLE `in_inspirasi_detail`
 -- AUTO_INCREMENT for table `in_post_categories`
 --
 ALTER TABLE `in_post_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `in_post_content`
 --
 ALTER TABLE `in_post_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `in_products`
 --
 ALTER TABLE `in_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `in_product_color`
 --
 ALTER TABLE `in_product_color`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `in_product_feature`
 --
@@ -2071,12 +2082,12 @@ ALTER TABLE `in_product_feature`
 -- AUTO_INCREMENT for table `in_product_file`
 --
 ALTER TABLE `in_product_file`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `in_product_type`
 --
 ALTER TABLE `in_product_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `kabupaten`
 --
@@ -2116,7 +2127,7 @@ ALTER TABLE `logdelrecord`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `idmenu` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=341;
+  MODIFY `idmenu` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=345;
 --
 -- AUTO_INCREMENT for table `menuutama`
 --

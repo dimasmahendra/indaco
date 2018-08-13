@@ -16,7 +16,7 @@
 	<link href="<?php echo site_url( 'resource/indaco/css/bootstrap.min.css' ) ?>" rel="stylesheet">
 	<link href="<?php echo site_url( 'resource/indaco/css/style.css' ) ?>" rel="stylesheet">
 	<link href="<?php echo site_url( 'resource/indaco/css/font-face.css' ) ?>" rel="stylesheet">
-	<link href="<?php echo site_url( 'resource/indaco/css/font-awesome.min.css' ) ?>" rel="stylesheet">
+	<link href="<?php echo site_url( 'resource/indaco/css/fontawesome-all.min.css' ) ?>" rel="stylesheet">
 	<?php
 		if (isset($css))
 		{
@@ -59,13 +59,11 @@
               <a class="nav-link dropdown-toggle d-none d-lg-block" href="#" onclick="javascript:location.href='<?php echo site_url('product') ?>'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUK</a>
               <a class="nav-link dropdown-toggle d-block d-lg-none" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUK</a>
               <div class="dropdown-menu produk dropdown-triangle">
-              	<a class="dropdown-item" href="<?php echo site_url('product/belazo') ?>">BELAZO</a>
-                <a class="dropdown-item" href="produk.html#panel-envi">ENVI</a>
-                <a class="dropdown-item" href="produk.html#panel-topseal">TOP SEAL</a>
-                <a class="dropdown-item" href="produk.html#panel-hotseal">HOT SEAL</a>
-                <a class="dropdown-item" href="produk.html#panel-tinting">TINTING</a>
-                <a class="dropdown-item" href="produk.html#panel-modacon">MODACON</a>
-                <a class="dropdown-item" href="produk.html#panel-nusatex">NUSATEX</a>
+              	<?php
+              		foreach ($data as $key => $value) { ?>
+              			<a class="dropdown-item" href="<?php echo site_url('product'); ?>#<?php echo strtolower(str_replace(" ", "", $value['name'])) ?>"><?php echo $value['name']; ?></a>
+              	<?php	}
+              	?>
               </div>
             </li>
             <li class="nav-item <?php echo in_array($controller_name, array('ctrpublic/inspirasi')) ? 'active' : '' ?>">
@@ -83,15 +81,15 @@
               <a class="nav-link dropdown-toggle d-none d-lg-block" href="#" onclick="javascript:location.href='<?php echo site_url('tentang-kami') ?>'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TENTANG KAMI</a>
               <a class="nav-link dropdown-toggle d-block d-lg-none" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TENTANG KAMI</a>
               <div class="dropdown-menu tentang dropdown-triangle">
-              	<a class="dropdown-item" href="tentang-kami.html">TENTANG INDACO</a>
-                <a class="dropdown-item" href="hubungi-kami.html">HUBUNGI KAMI</a>
-                <a class="dropdown-item" href="proyek.html">PROYEK</a>
-                <a class="dropdown-item" href="csr.html">CSR</a>
-                <a class="dropdown-item" href="faq.html">FAQ</a>
+              	<a class="dropdown-item" href="<?php echo site_url('tentang-kami') ?>">TENTANG INDACO</a>
+                <a class="dropdown-item" href="<?php echo site_url('hubungi-kami') ?>">HUBUNGI KAMI</a>
+                <a class="dropdown-item" href="<?php echo site_url('proyek') ?>">PROYEK</a>
+                <a class="dropdown-item" href="<?php echo site_url('csr') ?>">CSR</a>
+                <a class="dropdown-item" href="<?php echo site_url('faq') ?>">FAQ</a>
               </div>
             </li>
             <li class="nav-item d-block d-lg-none">
-              <a class="nav-link" href="berita.html">BERITA TERKINI</a>
+              <a class="nav-link" href="<?php echo site_url('berita') ?>">BERITA TERKINI</a>
             </li>
             <li class="nav-item nav-cari d-block d-lg-none">
               <a class="nav-link" href="#cari-modal" data-toggle="modal"><i class="fa fa-search mr-2"></i> SEARCH</a>
@@ -99,8 +97,8 @@
             <li class="nav-item dropdown search d-none d-lg-block">
               <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i></a>
               <div class="dropdown-menu dropdown-search-triangle">
-              	<form class="form-inline">
-              		<input class="form-control form-control-sm" type="search" placeholder="CARI" aria-label="CARI">
+              	<form action="<?php echo site_url( 'search' ) ?>" method="GET" class="form-inline">
+              		<input name="key" class="form-control form-control-sm" type="text" placeholder="CARI" aria-label="CARI">
               	</form>
               </div>
             </li>
@@ -116,11 +114,11 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<div class="col-12 px-0">
-							<form role="search" method="get" class="search-form cari-modal-form">
+							<form action="<?php echo site_url( 'search' ) ?>" role="search" method="get" class="search-form cari-modal-form">
 								<label class="sr-only">Search</label>
 								<div class="input-group golek">
 									<i class="fa fa-search" aria-hidden="true"></i>
-									<input type="search" name="s" class="search-field form-control" placeholder="Search">
+									<input type="text" name="key" class="search-field form-control" placeholder="Search">
 									<span class="input-group-btn">
 										<button type="button" class="search-submit close tutup" data-dismiss="modal">
 											<span aria-hidden="true">×</span>
@@ -148,11 +146,11 @@
 						<span class="text-white text-center mb-3 d-block d-lg-none">Tidak mau ketinggalan berita?<br>Jadilah pelanggan surel kami.</span>
 					</div>
 					<div class="col-12 col-lg-6">
-						<form class="form-inline float-md-right">
+						<form id="form-subscriber" class="form-inline float-md-right">
 							<div class="input-group">
-								<input type="text" class="form-control form-control-subscribe" placeholder="EMAIL ANDA" aria-label="EMAIL ANDA">
+								<input name="subs_email" type="text" class="form-control form-control-subscribe" placeholder="EMAIL ANDA" aria-label="EMAIL ANDA">
 								<div class="input-group-append">
-									<button class="btn btn-white" type="button">KIRIM</button>
+									<button class="btn btn-white" type="submit">KIRIM</button>
 								</div>
 							</div>            
 						</form>
@@ -172,23 +170,23 @@
 					<h5>Site Map</h5>
 					<hr class="footer-hr footer-hr-mobile-1">
 					<div class="footer-nav-mobile d-block d-lg-none">
-						<a href="index.html">BERANDA</a> | <a href="produk.html">PRODUK</a> | <a href="inspirasi.html">INSPIRASI</a><br><a href="cara-kami.html">CARA KAMI</a> | <a href="tentang-kami.html">TENTANG KAMI</a><br><a href="javascript:void(0)">BERGABUNG</a> | <a href="faq.html">FAQ</a> | <a href="berita.html">BERITA</a> | <a href="csr.html">CSR</a>
+						<a href="<?php echo site_url() ?>">BERANDA</a> | <a href="<?php echo site_url('product') ?>">PRODUK</a> | <a href="<?php echo site_url('inspirasi') ?>">INSPIRASI</a><br><a href="<?php echo site_url('cara-kami') ?>">CARA KAMI</a> | <a href="<?php echo site_url('tentang-kami') ?>">TENTANG KAMI</a><br><a href="javascript:void(0)">BERGABUNG</a> | <a href="<?php echo site_url('faq') ?>">FAQ</a> | <a href="<?php echo site_url('berita') ?>">BERITA</a> | <a href="<?php echo site_url('csr') ?>">CSR</a>
 					</div>
 					<div class="float-left d-none d-lg-block mt-4">
 						<ul class="footer-nav">
-							<li><a href="index.html">BERANDA</a></li>
-							<li><a href="produk.html">PRODUK</a></li>
-							<li><a href="inspirasi.html">INSPIRASI</a></li>
-							<li><a href="cara-kami.html">CARA KAMI</a></li>
-							<li><a href="tentang-kami.html">TENTANG KAMI</a></li>
+							<li><a href="<?php echo site_url() ?>">BERANDA</a></li>
+							<li><a href="<?php echo site_url('product') ?>">PRODUK</a></li>
+							<li><a href="<?php echo site_url('inspirasi') ?>">INSPIRASI</a></li>
+							<li><a href="<?php echo site_url('cara-kami') ?>">CARA KAMI</a></li>
+							<li><a href="<?php echo site_url('tentang-kami') ?>">TENTANG KAMI</a></li>
 						</ul>
 					</div>
 					<div class="float-right d-none d-lg-block mt-4">
 						<ul class="footer-nav">
-							<li><a href="javascript:void(0)">BERGABUNG</a></li>
-							<li><a href="faq.html">FAQ</a></li>
-							<li><a href="berita.html">BERITA</a></li>
-							<li><a href="csr.html">CSR</a></li>
+							<!-- <li><a href="javascript:void(0)">BERGABUNG</a></li> -->
+							<li><a href="<?php echo site_url('faq') ?>">FAQ</a></li>
+							<li><a href="<?php echo site_url('berita') ?>">BERITA</a></li>
+							<li><a href="<?php echo site_url('csr') ?>">CSR</a></li>
 						</ul>
 					</div>
 				</div>
@@ -239,6 +237,18 @@
 				echo '<script src="'.$js.'"></script>'."\r\n";
 		}
 	?>
+
+	<script type="text/javascript">
+		$(function() {
+			$('body').on('submit', '#form-subscriber', function(){
+				$.post(siteurl+'ctrpublic/subscriber_save', $(this).serialize(), function(){
+					$('#form-subscriber').find('button[type="submit"]').text('Email disimpan').attr('type', 'button');
+					$('#form-subscriber').find('input[name="subs_email"]').val('');
+				});
+				return false;
+			});
+		});
+	</script>
 
 </body>
 </html>
